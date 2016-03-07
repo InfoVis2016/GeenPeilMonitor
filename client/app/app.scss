@@ -43,6 +43,7 @@ body {
 
 // Component styles are injected through grunt
 // injector
+@import 'bar/bar.scss';
 @import 'main/main.scss';
 @import '../components/footer/footer.scss';
 // endinjector
