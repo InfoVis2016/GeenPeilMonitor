@@ -5,6 +5,28 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+body {
+  color: #333;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* User-select mixin */
+@mixin user-select($value) {
+  -webkit-touch-callout: $value;
+  -webkit-user-select: $value;
+  -khtml-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+}
+
+.no-select {
+	@include user-select(none);
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
