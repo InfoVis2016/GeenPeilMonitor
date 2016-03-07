@@ -1,11 +1,9 @@
 # infovis
 
-Material: https://material.angularjs.org/
-Icons: https://design.google.com/icons/
-More icons: https://klarsys.github.io/angular-material-icons/
-Boilerplate: https://github.com/DaftMonk/generator-angular-fullstack [version 3.3.0]
-
-## Getting Started
+- [Material](https://material.angularjs.org/)
+- [Icons](https://design.google.com/icons/)
+- [More icons](https://klarsys.github.io/angular-material-icons/) [animated]
+- [Boilerplate](https://github.com/DaftMonk/generator-angular-fullstack) [version 3.3.0]
 
 ### Prerequisites
 
