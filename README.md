@@ -1,6 +1,8 @@
 # infovis
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0.
+Material: https://material.angularjs.org/
+Icons: https://design.google.com/icons/
+Boilerplate: https://github.com/DaftMonk/generator-angular-fullstack [version 3.3.0]
 
 ## Getting Started
 
