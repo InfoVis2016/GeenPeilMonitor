@@ -1,1 +1,40 @@
+.bar-chart {
+  @include user-select(none);
+}
 
+h1 {
+  text-transform: uppercase;
+}
+
+/* Stlyes for d3 barchart */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #333;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: #333;
+}
+
+.bar {
+  fill: #ddd;
+}
+
+.bar:hover {
+  fill: #ff4500;
+}
+
+.year-label {
+  fill: #333;
+  stroke: #333;
+  font-size: 35px;
+}
+
+.bar-label,
+.bar-label-hover {
+  fill: #ff4500;
+  stroke: #ff4500;
+  pointer-events: none;
+}
