@@ -4,6 +4,7 @@
 - [Material](https://material.angularjs.org/)
 - [Icons](https://design.google.com/icons/)
 - [More icons](https://klarsys.github.io/angular-material-icons/) [animated]
+- [Fake data](http://www.mockaroo.com/) [for prototyping]
 - [Boilerplate](https://github.com/DaftMonk/generator-angular-fullstack) [version 3.3.0]
 
 ### Prerequisites
