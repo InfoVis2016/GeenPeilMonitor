@@ -15,15 +15,25 @@ angular.module('infovisApp')
         var margin = {
           top: 30,
           right: 20,
-          bottom: 50,
+          bottom: 100,
           left: 50
         };
-
         var width = 960 - margin.left - margin.right;
         var height = 500 - margin.top - margin.bottom;
 
-        var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
+        var marginOverview = {
+          top: 430,
+          right: margin.right,
+          bottom: 20,
+          left: margin.left
+        };
+        var heightOverview = 500 - marginOverview.top - marginOverview.bottom;
+
+        // mathematical scales for the x and y axes
+        var x = d3.time.scale().range([0, width]);
         var y = d3.scale.linear().range([height, 0]);
+        var xOverview = d3.time.scale().range([0, width]);
+        var yOverview = d3.scale.linear().range([heightOverview, 0]);
 
         var xAxis = d3.svg.axis()
             .scale(x)
