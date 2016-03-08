@@ -62,9 +62,9 @@ angular.module('infovisApp')
         var selectedYear = 2015;
 
         // Get data from server
-        d3.csv('meteo.csv', function(error, data) {
-          if (error) return console.err(error);
-          parseData(data);
+        d3.json('tweets.json', function(error, data) {
+          if (error) return console.log(error);
+          scope.parseData(data);
         });
 
         // Parse meteo data
