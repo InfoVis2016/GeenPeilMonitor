@@ -20,7 +20,6 @@ angular.module('infovisApp')
         };
         var width = 960 - margin.left - margin.right;
         var height = 500 - margin.top - margin.bottom;
-
         var marginOverview = {
           top: 430,
           right: margin.right,
@@ -28,6 +27,9 @@ angular.module('infovisApp')
           left: margin.left
         };
         var heightOverview = 500 - marginOverview.top - marginOverview.bottom;
+
+        // some colours to use for the bars
+        var colour = d3.scale.ordinal().range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
         // mathematical scales for the x and y axes
         var x = d3.time.scale().range([0, width]);
