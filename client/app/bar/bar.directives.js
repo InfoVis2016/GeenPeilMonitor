@@ -69,13 +69,22 @@ angular.module('infovisApp')
         });
 
         scope.parseData = function(data) {
+          var seen_dates = [];
           var clean_data = [];
           var parseDate = d3.time.format("%d/%m/%Y").parse;
           _.each(data, function(d) {
-            clean_data.push({
-              date: parseDate(d.date), // turn the date string into a date object
-              total: d.count
-            });
+            if ( seen_dates.indexOf(d.date) > -1 ) {
+              _.find(clean_data, function(cd) {
+                return cd._date === d.date;
+              }).total += d.count;
+            } else {
+              clean_data.push({
+                _date: d.date,
+                date: parseDate(d.date), // turn the date string into a date object
+                total: d.count
+              });
+              seen_dates.push(d.date);
+            }
           });
           scope.render(clean_data);
         }
