@@ -37,29 +37,33 @@ angular.module('infovisApp')
         var xOverview = d3.time.scale().range([0, width]);
         var yOverview = d3.scale.linear().range([heightOverview, 0]);
 
+        // rendering for the x and y axes
         var xAxis = d3.svg.axis()
-            .scale(x)
-            .tickFormat(function(d) {
-              var date = new Date(1, d, 1);
-              return date.toLocaleDateString('en-us', {month: 'short'});
-            })
-            .orient('bottom');
-
+          .scale(x)
+          .orient("bottom");
         var yAxis = d3.svg.axis()
-            .scale(y)
-            .orient('left')
-            .tickFormat(function(d) { return d+' °C'; })
-            .ticks(10);
+          .scale(y)
+          .orient("left");
+        var xAxisOverview = d3.svg.axis()
+          .scale(xOverview)
+          .orient("bottom");
 
         var svg = d3.select(element[0])
           .append('svg')
           .attr('width', width + margin.left + margin.right)
-          .attr('height', height + margin.top + margin.bottom)
-          .append('g')
-          .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+          .attr('height', height + margin.top + margin.bottom);
 
-        // Initialize current selected year variable
-        var selectedYear = 2015;
+        var main = svg.append("g")
+          .attr("class", "main")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        var overview = svg.append("g")
+          .attr("class", "overview")
+          .attr("transform", "translate(" + marginOverview.left + "," + marginOverview.top + ")");
+
+        // brush tool to let us zoom and pan using the overview chart
+        var brush = d3.svg.brush()
+          .x(xOverview)
+          .on("brush", brushed);
 
         // Get data from server
         d3.json('tweets.json', function(error, data) {
