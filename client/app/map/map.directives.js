@@ -19,7 +19,7 @@ angular.module('infovisApp')
           left: 50
         };
         var width = 960 - margin.left - margin.right;
-        var height = 500 - margin.top - margin.bottom;
+        var height = 850 - margin.top - margin.bottom;
 
         // Color range for the map
         var colors = d3.scale.category20();
