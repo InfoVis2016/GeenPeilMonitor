@@ -39,7 +39,9 @@ angular.module('infovisApp')
             .attr("id", "gemeentes")
             .attr("class", "RdYlGn");
 
-        d3.json("gem.json", function (json) {
+        d3.json("gem.json", function (error, json) {
+            if (error) throw error;
+
             gemeentes.selectAll("path")   // select all the current path nodes
                 .data(json.features)      // bind these to the features array in json
                 .enter().append("path")   // if not enough elements create a new path
