@@ -24,23 +24,16 @@ angular.module('infovisApp')
         // Color range for the map
         var colors = d3.scale.category20();
 
-        var xym = d3.geo.mercator();
-        var path = d3.geo.path().projection(xym);
-
-        // the variable that holds our translate, centers on the netherlands
-        var translate = xym.translate();
-        translate[0] = -500;
-        translate[1] = 10640
-
-        // center on the netherlands and zoom all the way in
-        xym.translate(translate);
-        xym.scale(60000);
+        var projection = d3.geo.mercator()
+          .scale(8000)
+          .translate([-350, 9000]);
+        var path = d3.geo.path()
+          .projection(projection);
 
         var svg = d3.select(element[0])
           .append("svg")
           .attr('width', width + margin.left + margin.right)
-          .attr('height', height + margin.top + margin.bottom)
-          .attr("id","svgoriginal");
+          .attr('height', height + margin.top + margin.bottom);
 
         var gemeentes = svg.append("g")
             .attr("id", "gemeentes")
