@@ -54,6 +54,16 @@ angular.module('infovisApp')
                     return colors(i);
                   }
                 })
+                  .on('mouseover', function(d, i) {
+                    var currentState = this;
+                    d3.select(this).style('fill-opacity', 1);
+                })
+                  .on('mouseout', function(d, i) {
+                          d3.selectAll('path')
+                            .style({
+                                'fill-opacity':.7
+                            })
+                          })
                 .attr('stroke', function (d, i) {
                   if ( d.properties.WATER === 'JA' ) {
                     return '#fff';
