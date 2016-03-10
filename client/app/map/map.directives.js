@@ -44,7 +44,7 @@ angular.module('infovisApp')
                 .data(json.features)      // bind these to the features array in json
                 .enter().append("path")   // if not enough elements create a new path
                 .attr("fill",function(d,i){return colors(i)})
-                .attr("stroke", "#333")
+                .attr("stroke", "#fff")
                 .attr("class", "gemeente")  // add attribute class and fill with result from quantize
                 .attr("id", function(d) { return d.properties.GM_CODE; })
                 .attr("d", path)          // transform the supplied jason geo path to svg
