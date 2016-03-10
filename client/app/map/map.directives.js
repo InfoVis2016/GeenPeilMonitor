@@ -12,9 +12,20 @@ angular.module('infovisApp')
       template: '<div class="map-chart"></div>',
       link: function (scope, element, attrs) {
 
+        var margin = {
+          top: 30,
+          right: 20,
+          bottom: 100,
+          left: 50
+        };
+        var width = 960 - margin.left - margin.right;
+        var height = 500 - margin.top - margin.bottom;
+
+        // Color range for the map
+        var colors = d3.scale.category20();
+
         var xym = d3.geo.mercator();
         var path = d3.geo.path().projection(xym);
-        var colors = d3.scale.category20();
 
         // the variable that holds our translate, centers on the netherlands
         var translate = xym.translate();
@@ -26,7 +37,10 @@ angular.module('infovisApp')
         xym.scale(60000);
 
         var svg = d3.select(element[0])
-            .append("svg").attr("id","svgoriginal");
+          .append("svg")
+          .attr('width', width + margin.left + margin.right)
+          .attr('height', height + margin.top + margin.bottom)
+          .attr("id","svgoriginal");
 
         var gemeentes = svg.append("g")
             .attr("id", "gemeentes")
