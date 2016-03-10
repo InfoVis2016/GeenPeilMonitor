@@ -45,8 +45,20 @@ angular.module('infovisApp')
             gemeentes.selectAll("path")   // select all the current path nodes
                 .data(json.features)      // bind these to the features array in json
                 .enter().append("path")   // if not enough elements create a new path
-                .attr("fill",function(d,i){return colors(i)})
-                .attr("stroke", "#fff")
+                .attr("fill", function(d, i) {
+                  if ( d.properties.WATER == "JA" ) {
+                    return "#fff";
+                  } else {
+                    return colors(i)
+                  }
+                })
+                .attr("stroke", function (d, i) {
+                  if ( d.properties.WATER == "JA" ) {
+                    return "#fff";
+                  } else {
+                    return colors(i)
+                  }
+                })
                 .attr("class", "gemeente")  // add attribute class and fill with result from quantize
                 .attr("id", function(d) { return d.properties.GM_CODE; })
                 .attr("d", path)          // transform the supplied jason geo path to svg
