@@ -1,6 +1,6 @@
 'use strict';
 
-/* globals d3 */
+/* globals d3, colorbrewer */
 
 /**
  * Infovis directives
@@ -23,9 +23,6 @@ angular.module('infovisApp')
         var width = 960 - margin.left - margin.right;
         var height = 850 - margin.top - margin.bottom;
 
-        // Color range for the map
-        var colors = d3.scale.category20();
-
         var projection = d3.geo.mercator()
           .scale(8000)
           .translate([-350, 9000]);
@@ -44,14 +41,20 @@ angular.module('infovisApp')
         d3.json('gem.json', function (error, json) {
             if (error)  { throw error; }
 
+            var colors = d3.scale.linear()
+              .domain([d3.max(json.features, function(d) {
+                return d.properties.AANT_INW;
+              }), 0])
+              .range(colorbrewer.RdYlGn[11]);
+
             gemeentes.selectAll('path')   // select all the current path nodes
                 .data(json.features)      // bind these to the features array in json
                 .enter().append('path')   // if not enough elements create a new path
-                .attr('fill', function(d, i) {
+                .attr('fill', function(d) {
                   if ( d.properties.WATER === 'JA' ) {
                     return '#fff';
                   } else {
-                    return colors(i);
+                    return colors(d.properties.AANT_INW);
                   }
                 })
                   .on('mouseover', function(d, i) {
@@ -68,7 +71,7 @@ angular.module('infovisApp')
                   if ( d.properties.WATER === 'JA' ) {
                     return '#fff';
                   } else {
-                    return colors(i);
+                    return colors(d.properties.AANT_INW);
                   }
                 })
                 .attr('class', 'gemeente')  // add attribute class and fill with result from quantize
