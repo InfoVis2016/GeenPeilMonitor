@@ -1,5 +1,7 @@
 'use strict';
 
+/* globals d3 */
+
 /**
  * Infovis directives
  */
@@ -10,7 +12,7 @@ angular.module('infovisApp')
       restrict: 'E',
       replace: true,
       template: '<div class="map-chart"></div>',
-      link: function (scope, element, attrs) {
+      link: function (scope, element) {
 
         var margin = {
           top: 30,
@@ -31,37 +33,37 @@ angular.module('infovisApp')
           .projection(projection);
 
         var svg = d3.select(element[0])
-          .append("svg")
+          .append('svg')
           .attr('width', width + margin.left + margin.right)
           .attr('height', height + margin.top + margin.bottom);
 
-        var gemeentes = svg.append("g")
-            .attr("id", "gemeentes")
-            .attr("class", "RdYlGn");
+        var gemeentes = svg.append('g')
+            .attr('id', 'gemeentes')
+            .attr('class', 'RdYlGn');
 
-        d3.json("gem.json", function (error, json) {
-            if (error) throw error;
+        d3.json('gem.json', function (error, json) {
+            if (error)  { throw error; }
 
-            gemeentes.selectAll("path")   // select all the current path nodes
+            gemeentes.selectAll('path')   // select all the current path nodes
                 .data(json.features)      // bind these to the features array in json
-                .enter().append("path")   // if not enough elements create a new path
-                .attr("fill", function(d, i) {
-                  if ( d.properties.WATER == "JA" ) {
-                    return "#fff";
+                .enter().append('path')   // if not enough elements create a new path
+                .attr('fill', function(d, i) {
+                  if ( d.properties.WATER === 'JA' ) {
+                    return '#fff';
                   } else {
-                    return colors(i)
+                    return colors(i);
                   }
                 })
-                .attr("stroke", function (d, i) {
-                  if ( d.properties.WATER == "JA" ) {
-                    return "#fff";
+                .attr('stroke', function (d, i) {
+                  if ( d.properties.WATER === 'JA' ) {
+                    return '#fff';
                   } else {
-                    return colors(i)
+                    return colors(i);
                   }
                 })
-                .attr("class", "gemeente")  // add attribute class and fill with result from quantize
-                .attr("id", function(d) { return d.properties.GM_CODE; })
-                .attr("d", path)          // transform the supplied jason geo path to svg
+                .attr('class', 'gemeente')  // add attribute class and fill with result from quantize
+                .attr('id', function(d) { return d.properties.GM_CODE; })
+                .attr('d', path);         // transform the supplied jason geo path to svg
         });
       }
     };
