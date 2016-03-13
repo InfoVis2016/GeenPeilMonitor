@@ -57,7 +57,6 @@ angular.module('infovisApp')
                     return colors(d.properties.AANT_INW);
                   }
                 })
-                .style('fill-opacity', 0.75)
                 .on('mouseover', function(d, i) {
                   d3.select(this).style('fill-opacity', 1);
                 })
