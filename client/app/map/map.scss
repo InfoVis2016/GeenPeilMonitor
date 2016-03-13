@@ -8,4 +8,15 @@
       fill-opacity: 1;
     }
   }
+
+  .info {
+    will-change: opacity;
+    transition: opacity 0.5s ease;
+
+    .info-title {
+      fill: #333;
+      stroke: #333;
+      font-size: 35px;
+    }
+  }
 }
