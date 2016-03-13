@@ -71,7 +71,6 @@ angular.module('infovisApp')
                     return colors(d.properties.AANT_INW);
                   }
                 })
-                .attr('class', 'gemeente')  // add attribute class and fill with result from quantize
                 .attr('id', function(d) { return d.properties.GM_CODE; })
                 .attr('d', path);         // transform the supplied jason geo path to svg
         });

@@ -1,1 +1,10 @@
+.map-chart {
 
+  .map > .segment {
+    fill-opacity: 0.75;
+
+    &:hover {
+      fill-opacity: 1;
+    }
+  }
+}
