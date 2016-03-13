@@ -57,16 +57,13 @@ angular.module('infovisApp')
                     return colors(d.properties.AANT_INW);
                   }
                 })
-                  .on('mouseover', function(d, i) {
-                    var currentState = this;
-                    d3.select(this).style('fill-opacity', 1);
+                .style('fill-opacity', 0.75)
+                .on('mouseover', function(d, i) {
+                  d3.select(this).style('fill-opacity', 1);
                 })
-                  .on('mouseout', function(d, i) {
-                          d3.selectAll('path')
-                            .style({
-                                'fill-opacity':.7
-                            })
-                          })
+                .on('mouseout', function(d, i) {
+                  d3.select(this).style('fill-opacity', 0.75);
+                })
                 .attr('stroke', function (d, i) {
                   if ( d.properties.WATER === 'JA' ) {
                     return '#fff';
