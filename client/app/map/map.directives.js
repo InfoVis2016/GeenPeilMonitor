@@ -41,7 +41,7 @@ angular.module('infovisApp')
         d3.json('gem.json', function (error, json) {
             if (error)  { throw error; }
 
-            var colors = d3.scale.linear()
+            var colors = d3.scale.quantize()
               .domain([d3.max(json.features, function(d) {
                 return d.properties.AANT_INW;
               }), 0])
