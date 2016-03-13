@@ -1,6 +1,7 @@
 .map-chart {
 
   .map > .segment {
+    cursor: pointer;
     fill-opacity: 0.75;
 
     &:hover {
