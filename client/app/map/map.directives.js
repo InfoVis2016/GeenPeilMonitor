@@ -20,7 +20,7 @@ angular.module('infovisApp')
           bottom: 100,
           left: 50
         };
-        var width = 960 - margin.left - margin.right;
+        var width = 1080 - margin.left - margin.right;
         var height = 850 - margin.top - margin.bottom;
 
         var projection = d3.geo.mercator()
