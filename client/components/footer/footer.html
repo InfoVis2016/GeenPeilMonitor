@@ -1,15 +1,26 @@
 <md-content>
   <section layout="row" layout-sm="row" layout-align="center center" layout-wrap>
-    <div flex-xs flex-gt-xs="95" layout="column">
+    <div flex-xs flex-gt-xs="85" layout="column">
       <span class="no-select">Information Visualization 2016, Universiteit van Amsterdam</span>
     </div>
-    <div flex-xs flex-gt-xs="5" layout="column">
-      <md-button class="md-icon-button md-warn"
-        aria-label="More"
-        target="_blank"
-        ng-href="https://github.com/InfoVis2016/GeenPeilMonitor">
-        <md-icon class="material-icons">&#xE86F;</md-icon>
-      </md-button>
+    <div flex-xs flex-gt-xs="15" layout="column">
+      <div layout="row" layout-align="end center">
+        <md-button class="md-icon-button md-warn" aria-label="Home" ui-sref="main">
+          <md-icon class="material-icons">&#xE88A;</md-icon>
+        </md-button>
+        <md-button class="md-icon-button md-warn" aria-label="Bar" ui-sref="bar">
+          <md-icon class="material-icons">&#xE540;</md-icon>
+        </md-button>
+        <md-button class="md-icon-button md-warn" aria-label="Map" ui-sref="map">
+          <md-icon class="material-icons">&#xE55B;</md-icon>
+        </md-button>
+        <md-button class="md-icon-button md-warn"
+          aria-label="Github"
+          target="_blank"
+          ng-href="https://github.com/InfoVis2016/GeenPeilMonitor">
+          <md-icon class="material-icons">&#xE86F;</md-icon>
+        </md-button>
+      </div>
     </div>
   </section>
 </md-content>
