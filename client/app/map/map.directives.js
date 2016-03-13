@@ -66,10 +66,13 @@ angular.module('infovisApp')
                   }
                 })
                 .on('mouseover', function(d, i) {
-                  d3.select(this).style('fill-opacity', 1);
+                  if ( d.properties.WATER === 'JA' ) return;
+                  info_title.text(d.properties.GM_NAAM);
+                  info.attr('opacity', 1);
                 })
                 .on('mouseout', function(d, i) {
-                  d3.select(this).style('fill-opacity', 0.75);
+                  if ( d.properties.WATER === 'JA' ) return;
+                  info.attr('opacity', 0);
                 })
                 .attr('stroke', function (d, i) {
                   if ( d.properties.WATER === 'JA' ) {
