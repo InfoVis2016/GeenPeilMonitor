@@ -37,6 +37,14 @@ angular.module('infovisApp')
         var map = svg.append('g')
           .attr('class', 'map');
 
+        var info = svg.append('g')
+          .attr('opacity', 0)
+          .attr('class', 'info');
+        var info_title = info.append('text')
+          .attr('x', 800)
+          .attr('y', 150)
+          .attr('class', 'info-title');
+
         d3.json('gem.json', function (error, json) {
             if (error)  { throw error; }
 
