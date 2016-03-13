@@ -34,9 +34,8 @@ angular.module('infovisApp')
           .attr('width', width + margin.left + margin.right)
           .attr('height', height + margin.top + margin.bottom);
 
-        var gemeentes = svg.append('g')
-            .attr('id', 'gemeentes')
-            .attr('class', 'RdYlGn');
+        var map = svg.append('g')
+          .attr('class', 'map');
 
         d3.json('gem.json', function (error, json) {
             if (error)  { throw error; }
@@ -47,9 +46,10 @@ angular.module('infovisApp')
               }), 0])
               .range(colorbrewer.RdYlGn[11]);
 
-            gemeentes.selectAll('path')   // select all the current path nodes
+            map.selectAll('path')   // select all the current path nodes
                 .data(json.features)      // bind these to the features array in json
                 .enter().append('path')   // if not enough elements create a new path
+                .attr('class', 'segment')
                 .attr('fill', function(d) {
                   if ( d.properties.WATER === 'JA' ) {
                     return '#fff';
