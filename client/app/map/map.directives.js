@@ -50,44 +50,44 @@ angular.module('infovisApp')
           .attr('class', 'info-subtitle');
 
         d3.json('gem.json', function (error, json) {
-            if (error)  { throw error; }
+          if (error)  { throw error; }
 
-            var colors = d3.scale.quantize()
-              .domain([d3.max(json.features, function(d) {
-                return d.properties.AANT_INW;
-              }), 0])
-              .range(colorbrewer.RdYlGn[11]);
+          var colors = d3.scale.quantize()
+            .domain([d3.max(json.features, function(d) {
+              return d.properties.AANT_INW;
+            }), 0])
+            .range(colorbrewer.RdYlGn[11]);
 
-            map.selectAll('path')   // select all the current path nodes
-                .data(json.features)      // bind these to the features array in json
-                .enter().append('path')   // if not enough elements create a new path
-                .attr('class', 'segment')
-                .attr('fill', function(d) {
-                  if ( d.properties.WATER === 'JA' ) {
-                    return '#fff';
-                  } else {
-                    return colors(d.properties.AANT_INW);
-                  }
-                })
-                .on('mouseover', function(d, i) {
-                  if ( d.properties.WATER === 'JA' ) return;
-                  info_title.text(d.properties.GM_NAAM);
-                  info_subtitle.text('Aantal inwoners: ' + d.properties.AANT_INW);
-                  info.attr('opacity', 1);
-                })
-                .on('mouseout', function(d, i) {
-                  if ( d.properties.WATER === 'JA' ) return;
-                  info.attr('opacity', 0);
-                })
-                .attr('stroke', function (d, i) {
-                  if ( d.properties.WATER === 'JA' ) {
-                    return '#fff';
-                  } else {
-                    return colors(d.properties.AANT_INW);
-                  }
-                })
-                .attr('id', function(d) { return d.properties.GM_CODE; })
-                .attr('d', path);         // transform the supplied jason geo path to svg
+          map.selectAll('path')   // select all the current path nodes
+            .data(json.features)      // bind these to the features array in json
+            .enter().append('path')   // if not enough elements create a new path
+            .attr('class', 'segment')
+            .attr('fill', function(d) {
+              if ( d.properties.WATER === 'JA' ) {
+                return '#fff';
+              } else {
+                return colors(d.properties.AANT_INW);
+              }
+            })
+            .on('mouseover', function(d, i) {
+              if ( d.properties.WATER === 'JA' ) return;
+              info_title.text(d.properties.GM_NAAM);
+              info_subtitle.text('Aantal inwoners: ' + d.properties.AANT_INW);
+              info.attr('opacity', 1);
+            })
+            .on('mouseout', function(d, i) {
+              if ( d.properties.WATER === 'JA' ) return;
+              info.attr('opacity', 0);
+            })
+            .attr('stroke', function (d, i) {
+              if ( d.properties.WATER === 'JA' ) {
+                return '#fff';
+              } else {
+                return colors(d.properties.AANT_INW);
+              }
+            })
+            .attr('id', function(d) { return d.properties.GM_CODE; })
+            .attr('d', path);         // transform the supplied jason geo path to svg
         });
       }
     };
