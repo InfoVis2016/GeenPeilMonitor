@@ -44,6 +44,10 @@ angular.module('infovisApp')
           .attr('x', 800)
           .attr('y', 150)
           .attr('class', 'info-title');
+        var info_subtitle = info.append('text')
+          .attr('x', 800)
+          .attr('y', 200)
+          .attr('class', 'info-subtitle');
 
         d3.json('gem.json', function (error, json) {
             if (error)  { throw error; }
@@ -68,6 +72,7 @@ angular.module('infovisApp')
                 .on('mouseover', function(d, i) {
                   if ( d.properties.WATER === 'JA' ) return;
                   info_title.text(d.properties.GM_NAAM);
+                  info_subtitle.text('Aantal inwoners: ' + d.properties.AANT_INW);
                   info.attr('opacity', 1);
                 })
                 .on('mouseout', function(d, i) {
