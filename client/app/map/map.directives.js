@@ -42,12 +42,12 @@ angular.module('infovisApp')
           .attr('opacity', 0)
           .attr('class', 'info no-select');
         var info_title = info.append('text')
-          .attr('x', 800)
-          .attr('y', 150)
+          .attr('x', 300)
+          .attr('y', 50)
           .attr('class', 'info-title');
         var info_subtitle = info.append('text')
-          .attr('x', 800)
-          .attr('y', 200)
+          .attr('x', 300)
+          .attr('y', 75)
           .attr('class', 'info-subtitle');
 
         d3.json('gem.json', function (error, json) {
