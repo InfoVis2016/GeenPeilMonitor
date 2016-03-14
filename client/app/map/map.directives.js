@@ -24,8 +24,8 @@ angular.module('infovisApp')
         var height = 850 - margin.top - margin.bottom;
 
         var projection = d3.geo.mercator()
-          .scale(8000)
-          .translate([-350, 9000]);
+          .scale(3000)
+          .translate([-150, 3370]);
         var path = d3.geo.path()
           .projection(projection);
 
