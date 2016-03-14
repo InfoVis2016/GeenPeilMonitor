@@ -14,15 +14,6 @@ angular.module('infovisApp')
       template: '<div class="map-chart"></div>',
       link: function (scope, element) {
 
-        var margin = {
-          top: 30,
-          right: 20,
-          bottom: 100,
-          left: 50
-        };
-        var width = 1080 - margin.left - margin.right;
-        var height = 850 - margin.top - margin.bottom;
-
         var projection = d3.geo.mercator()
           .scale(3000)
           .translate([-150, 3370]);
