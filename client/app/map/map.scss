@@ -5,6 +5,7 @@
   padding-bottom: 100%; /* aspect ratio */
   vertical-align: top;
   overflow: hidden;
+  @include user-select(none);
 
   .svg {
     display: inline-block;

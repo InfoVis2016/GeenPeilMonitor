@@ -40,7 +40,7 @@ angular.module('infovisApp')
 
         var info = svg.append('g')
           .attr('opacity', 0)
-          .attr('class', 'info no-select');
+          .attr('class', 'info');
         var info_title = info.append('text')
           .attr('x', 800)
           .attr('y', 150)
