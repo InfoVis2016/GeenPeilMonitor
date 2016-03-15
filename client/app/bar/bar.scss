@@ -1,55 +1,64 @@
 .bar-chart {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
   @include user-select(none);
-}
 
-h1 {
-  text-transform: uppercase;
-}
+  .svg {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
 
-/* Stlyes for d3 barchart */
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #333;
-  shape-rendering: crispEdges;
-}
+  /* Stlyes for d3 barchart */
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #333;
+    shape-rendering: crispEdges;
+  }
 
-.axis text {
-  fill: #333;
-}
+  .axis text {
+    fill: #333;
+  }
 
-.bar {
-  fill: #ddd;
-}
+  .bar {
+    fill: #ddd;
+  }
 
-.bar:hover {
-  fill: #ff4500;
-}
+  .bar:hover {
+    fill: #ff4500;
+  }
 
-.year-label {
-  fill: #333;
-  stroke: #333;
-  font-size: 35px;
-}
+  .year-label {
+    fill: #333;
+    stroke: #333;
+    font-size: 35px;
+  }
 
-.bar-label,
-.bar-label-hover {
-  fill: #ff4500;
-  stroke: #ff4500;
-  pointer-events: none;
-}
+  .bar-label,
+  .bar-label-hover {
+    fill: #ff4500;
+    stroke: #ff4500;
+    pointer-events: none;
+  }
 
-.axis {
-  font: 10px sans-serif;
-}
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-.brush .extent {
-  stroke: #fff;
-  fill-opacity: .125;
-  shape-rendering: crispEdges;
+  .axis {
+    font: 10px sans-serif;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  .brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+  }
 }
