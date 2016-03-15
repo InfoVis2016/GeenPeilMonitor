@@ -14,15 +14,6 @@ angular.module('infovisApp')
       template: '<div class="map-chart"></div>',
       link: function (scope, element) {
 
-        var margin = {
-          top: 30,
-          right: 20,
-          bottom: 100,
-          left: 50
-        };
-        var width = 1080 - margin.left - margin.right;
-        var height = 850 - margin.top - margin.bottom;
-
         var projection = d3.geo.mercator()
           .scale(3000)
           .translate([-150, 3370]);
@@ -42,12 +33,12 @@ angular.module('infovisApp')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
-          .attr('x', 800)
-          .attr('y', 150)
+          .attr('x', 300)
+          .attr('y', 50)
           .attr('class', 'info-title');
         var info_subtitle = info.append('text')
-          .attr('x', 800)
-          .attr('y', 200)
+          .attr('x', 300)
+          .attr('y', 75)
           .attr('class', 'info-subtitle');
 
         d3.json('gem.json', function (error, json) {
