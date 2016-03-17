@@ -20,7 +20,7 @@ angular.module('infovisApp')
           bottom: 100,
           left: 50
         };
-        var width = 960 - margin.left - margin.right;
+        var width = 700 - margin.left - margin.right;
         var height = 500 - margin.top - margin.bottom;
         var marginOverview = {
           top: 430,
@@ -52,7 +52,6 @@ angular.module('infovisApp')
           .attr('preserveAspectRatio', 'xMinYMin meet')
           .attr('viewBox', '0 0 960 500')
           .attr('class', 'svg');
-
 
         var main = svg.append('g')
           .attr('class', 'main')
