@@ -49,8 +49,10 @@ angular.module('infovisApp')
 
         var svg = d3.select(element[0])
           .append('svg')
-          .attr('width', width + margin.left + margin.right)
-          .attr('height', height + margin.top + margin.bottom);
+          .attr('preserveAspectRatio', 'xMinYMin meet')
+          .attr('viewBox', '0 0 960 500')
+          .attr('class', 'svg');
+
 
         var main = svg.append('g')
           .attr('class', 'main')
