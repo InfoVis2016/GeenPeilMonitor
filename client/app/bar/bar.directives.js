@@ -73,24 +73,18 @@ angular.module('infovisApp')
         });
 
         scope.parseData = function(data) {
-          var seen_dates = [];
-          var clean_data = [];
-          var parseDate = d3.time.format('%d/%m/%Y').parse;
-          _.each(data, function(d) {
-            if ( seen_dates.indexOf(d.date) > -1 ) {
-              _.find(clean_data, function(cd) {
-                return cd._date === d.date;
-              }).total += d.count;
-            } else {
-              clean_data.push({
-                _date: d.date,
-                date: parseDate(d.date), // turn the date string into a date object
-                total: d.count
-              });
-              seen_dates.push(d.date);
-            }
-          });
-          scope.render(clean_data);
+          var _data = [];
+          var parseDate = d3.time.format('%Y-%m-%d').parse;
+          for ( var date in data ) {
+            if ( !data.hasOwnProperty(date) ) { return; }
+            _data.push({
+              date: parseDate(date),
+              total: data[date].count,
+              words: data[date].word_counts,
+              users: data[date].user_counts
+            });
+          }
+          scope.render(_data);
         };
 
         scope.render = function(data) {
