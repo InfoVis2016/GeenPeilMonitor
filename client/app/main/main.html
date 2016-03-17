@@ -1,34 +1,17 @@
-<div ng-controller="MainController" layout="column" ng-cloak>
+<div ng-controller="MainController" layout="column" class="main" ng-cloak>
   <md-content class="md-padding" layout-xs="column" layout="row">
-    <div flex-xs flex-gt-xs="50" layout="column">
-      <md-card>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">
-              <md-icon class="material-icons">&#xE90E;</md-icon>
-              <md-icon class="material-icons">&#xE869;</md-icon>
-              <md-icon class="material-icons">&#xE425;</md-icon>
-              GeenPeil Monitor
-            </span>
-            <span class="md-subhead">
-              Bender! Ship! Stop bickering or I'm going to come back there and change your opinions manually! Really?! You've killed me! Oh, you've killed me! But existing is basically all I do! Is the Space Pope reptilian!?
-            </span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-lg card-media"></div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button ui-sref="bar">
-            <md-icon class="material-icons">&#xE540;</md-icon>
-            Bar
-          </md-button>
-          <md-button ui-sref="map">
-            <md-icon class="material-icons">&#xE55B;</md-icon>
-            Map
-          </md-button>
-        </md-card-actions>
-      </md-card>
+    <div flex-xs flex-gt-xs="100" layout="column">
+      <img ng-src="assets/images/geenpeil.png" />
+      <div class="spacer"></div>
+      <h1>GeenPeil, an initiative to hold a referendum in The Netherlands about the European Union (EU) Association Agreement. The Association Agreement allows Ukraine to more actively participate with member countries in the European Union. As stated in EU law, the referendum should take place as the initiative gathered more than 300000 autographs of the dutch people. The referendum will be held on the sixth of april 2016 accordingly.</h1>
+      <div class="spacer"></div>
+      <h1></h1>
+      <div ng-include="'app/bar/bar.html'"></div>
+      <div class="spacer"></div>
+      <h1></h1>
+      <div ng-include="'app/map/map.html'"></div>
+      <div class="spacer"></div>
+      <h1></h1>
     </div>
   </md-content>
 </div>
