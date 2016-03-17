@@ -14,18 +14,6 @@
     left: 0;
   }
 
-  /* Stlyes for d3 barchart */
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: #333;
-    shape-rendering: crispEdges;
-  }
-
-  .axis text {
-    fill: #333;
-  }
-
   .bar {
     fill: #ddd;
   }
@@ -34,31 +22,27 @@
     fill: #ff4500;
   }
 
-  .year-label {
-    fill: #333;
-    stroke: #333;
-    font-size: 35px;
-  }
-
-  .bar-label,
-  .bar-label-hover {
-    fill: #ff4500;
-    stroke: #ff4500;
-    pointer-events: none;
-  }
-
   .axis {
     font: 10px sans-serif;
   }
   .axis path,
   .axis line {
     fill: none;
-    stroke: #000;
+    stroke: #333;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+  .axis text {
+    fill: #333;
+    stroke: #333;
+    stroke-width: 0.5;
     shape-rendering: crispEdges;
   }
   .brush .extent {
-    stroke: #fff;
+    fill: #ff4500;
     fill-opacity: .125;
+    stroke: #ff4500;
+    stroke-width: 2;
     shape-rendering: crispEdges;
   }
 }
