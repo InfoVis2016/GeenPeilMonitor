@@ -97,14 +97,14 @@ angular.module('infovisApp')
           // draw the axes now that they are fully set up
           main.append('g')
             .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + height + ')')
+            .attr('transform', 'translate(0,' + (height+1) + ')')
             .call(xAxis);
           main.append('g')
             .attr('class', 'y axis')
             .call(yAxis);
           overview.append('g')
             .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + heightOverview + ')')
+            .attr('transform', 'translate(0,' + (heightOverview+1) + ')')
             .call(xAxisOverview);
 
           // draw the bars
