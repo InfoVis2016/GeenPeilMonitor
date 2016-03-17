@@ -30,12 +30,12 @@ angular.module('infovisApp')
         ];
 
         var margin = {
-          top: 30,
+          top: 80,
           right: 20,
           bottom: 100,
           left: 50
         };
-        var width = 700 - margin.left - margin.right;
+        var width = 960 - margin.left - margin.right;
         var height = 500 - margin.top - margin.bottom;
         var marginOverview = {
           top: 430,
@@ -85,12 +85,11 @@ angular.module('infovisApp')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
-          .attr('x', 700)
+          .attr('x', 750)
           .attr('y', 20)
-          .text('asdfasdf')
           .attr('class', 'info-title');
         var info_subtitle = info.append('text')
-          .attr('x', 700)
+          .attr('x', 750)
           .attr('y', 45)
           .text('asdfasdf')
           .attr('class', 'info-subtitle');
@@ -190,7 +189,7 @@ angular.module('infovisApp')
           x.domain(brush.empty() ? xOverview.domain() : brush.extent());
 
           // redraw the bars on the main chart
-          main.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.date) + ',0)'; });
+          main.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.date)+1 + ',0)'; });
 
           // redraw the x axis of the main chart
           main.select('.x.axis').call(xAxis);
