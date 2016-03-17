@@ -149,6 +149,11 @@ angular.module('infovisApp')
               .attr('y', function(d) { return y(d.total)-1; })
               .attr('height', function(d) { return height - y(d.total); })
               .on('mouseover', function(d) {
+                var day = d.date.getDate();
+                var month = monthNames[d.date.getMonth()];
+                var year = d.date.getFullYear();
+                info_title.text(day + ' ' + month + ' ' + year);
+                info_subtitle.text('Tweet count: ' + d.total);
                 info.attr('opacity', 1);
               })
               .on('mouseout', function() {
