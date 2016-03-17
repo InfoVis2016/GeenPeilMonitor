@@ -127,7 +127,7 @@ angular.module('infovisApp')
             .enter().append('rect')
               .attr('class', 'bar')
               .attr('x', function(d) { return xOverview(d.date) - 3; })
-              .attr('width', 6)
+              .attr('width', 10)
               .attr('y', function(d) { return yOverview(d.total); })
               .attr('height', function(d) { return heightOverview - yOverview(d.total); });
 
