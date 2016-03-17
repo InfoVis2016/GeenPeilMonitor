@@ -147,7 +147,13 @@ angular.module('infovisApp')
               .attr('width', 25)
               .attr('x', function(d) { return x(d.date)+1; })
               .attr('y', function(d) { return y(d.total)-1; })
-              .attr('height', function(d) { return height - y(d.total); });
+              .attr('height', function(d) { return height - y(d.total); })
+              .on('mouseover', function(d) {
+                info.attr('opacity', 1);
+              })
+              .on('mouseout', function() {
+                info.attr('opacity', 0);
+              });
 
           overview.append('g')
             .attr('class', 'bars')
