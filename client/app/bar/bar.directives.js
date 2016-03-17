@@ -65,6 +65,21 @@ angular.module('infovisApp')
           .x(xOverview)
           .on('brush', brushed);
 
+        // Info container
+        var info = svg.append('g')
+          .attr('opacity', 0)
+          .attr('class', 'info');
+        var info_title = info.append('text')
+          .attr('x', 700)
+          .attr('y', 20)
+          .text('asdfasdf')
+          .attr('class', 'info-title');
+        var info_subtitle = info.append('text')
+          .attr('x', 700)
+          .attr('y', 45)
+          .text('asdfasdf')
+          .attr('class', 'info-subtitle');
+
         // Get data from server
         d3.json('tweets.json', function(error, data) {
           if (error) { throw error; }
