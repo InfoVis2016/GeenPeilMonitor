@@ -111,14 +111,14 @@ angular.module('infovisApp')
           // draw the axes now that they are fully set up
           main.append('g')
             .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + (height+1) + ')')
+            .attr('transform', 'translate(0,' + height + ')')
             .call(xAxis);
           main.append('g')
             .attr('class', 'y axis')
             .call(yAxis);
           overview.append('g')
             .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + (heightOverview+1) + ')')
+            .attr('transform', 'translate(0,' + heightOverview + ')')
             .call(xAxisOverview);
 
           // draw the bars
@@ -130,8 +130,8 @@ angular.module('infovisApp')
             .enter().append('rect')
               .attr('class', 'bar')
               .attr('width', 25)
-              .attr('x', function(d) { return x(d.date); })
-              .attr('y', function(d) { return y(d.total); })
+              .attr('x', function(d) { return x(d.date)+1; })
+              .attr('y', function(d) { return y(d.total)-1; })
               .attr('height', function(d) { return height - y(d.total); });
 
           overview.append('g')
@@ -140,9 +140,9 @@ angular.module('infovisApp')
             .data(data)
             .enter().append('rect')
               .attr('class', 'bar')
-              .attr('x', function(d) { return xOverview(d.date); })
+              .attr('x', function(d) { return xOverview(d.date)+1; })
               .attr('width', 25)
-              .attr('y', function(d) { return yOverview(d.total); })
+              .attr('y', function(d) { return yOverview(d.total)-1; })
               .attr('height', function(d) { return heightOverview - yOverview(d.total); });
 
           // add the brush target area on the overview chart
