@@ -1,6 +1,15 @@
 'use strict';
 
+(function() {
+
+class MeteoController {
+
+  constructor() {
+  }
+
+}
+
 angular.module('infovisApp')
-  .controller('MeteoCtrl', function ($scope) {
-    $scope.message = 'Hello';
-  });
+  .controller('MeteoController', MeteoController);
+
+})();
