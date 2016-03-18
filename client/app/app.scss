@@ -44,6 +44,7 @@ body {
 // Component styles are injected through grunt
 // injector
 @import 'bar/bar.scss';
+@import 'cloud/cloud.scss';
 @import 'main/main.scss';
 @import 'map/map.scss';
 @import 'meteo/meteo.scss';
