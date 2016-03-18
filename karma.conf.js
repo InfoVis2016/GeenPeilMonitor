@@ -26,6 +26,7 @@ module.exports = function(config) {
       'client/bower_components/d3/d3.js',
       'client/bower_components/colorbrewer/colorbrewer.js',
       'client/bower_components/topojson/topojson.js',
+      'client/bower_components/d3-cloud/build/d3.layout.cloud.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',
