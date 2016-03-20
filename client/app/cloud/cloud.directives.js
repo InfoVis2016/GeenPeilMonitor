@@ -48,7 +48,6 @@ angular.module('infovisApp')
           
           var sizeScale = d3.scale.linear()
                     .domain([0, d3.max(data, function(d) { 
-                    	console.log('hi!');
                     	return d.size; })])
                     .range([0, width]);
           var layout = d3.layout.cloud()
