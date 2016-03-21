@@ -1,6 +1,6 @@
 'use strict';
 
-/* globals d3, colorbrewer, topojson */
+/* globals d3, topojson */
 
 /**
  * Infovis directives
@@ -60,12 +60,6 @@ angular.module('infovisApp')
           if (error) { throw error; }
 
           var subunits = topojson.feature(data, data.objects.gem);
-
-          var colors = d3.scale.quantize()
-            .domain([d3.max(subunits.features, function(d) {
-              return d.properties.AANT_INW;
-            }), 0])
-            .range(colorbrewer.RdYlGn[11]);
 
           map.selectAll('path')
             .data(subunits.features)
