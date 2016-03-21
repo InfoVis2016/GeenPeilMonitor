@@ -14,20 +14,6 @@ angular.module('infovisApp')
       template: '<div class="map-chart"></div>',
       link: function (scope, element) {
 
-        var parties = {
-          '50PLUS': true,
-          'Christen Democratisch Appèl (CDA)': true,
-          'ChristenUnie': false,
-          'Democraten 66 (D66)': true,
-          'GROENLINKS': true,
-          'PVV (Partij voor de Vrijheid)': false,
-          'Partij van de Arbeid (P.v.d.A.)': true,
-          'Partij voor de Dieren': false,
-          'SP (Socialistische Partij)': false,
-          'Staatkundig Gereformeerde Partij (SGP)': false,
-          'VVD': true
-        };
-
         var svg = d3.select(element[0])
           .append('svg')
           .attr('preserveAspectRatio', 'xMinYMin meet')
@@ -69,13 +55,7 @@ angular.module('infovisApp')
               if ( d.properties.WATER === 'JA' ) {
                 return '#fff';
               } else {
-                var count = 0;
-                for ( var key in parties ) {
-                  if ( parties.hasOwnProperty(key) ) {
-                    count = parties[key] ? count + d.properties[key] : count - d.properties[key];
-                  }
-                }
-                return count > 0 ? '#5FFF60' : '#E53F31';
+                return d.properties.in_favor ? '#5FFF60' : '#E53F31';
               }
             })
             .on('mouseover', function(d) {
