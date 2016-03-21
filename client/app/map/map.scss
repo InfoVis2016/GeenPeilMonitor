@@ -17,13 +17,10 @@
   .map > .segment {
     stroke-width: 0.5;
     cursor: pointer;
-    fill-opacity: 0.9;
     stroke-linejoin: round;
     shape-rendering: crispEdges;
-
-    &:hover {
-      fill-opacity: 1;
-    }
+    will-change: fill;
+    transition: fill 0.25s ease;
   }
 
   .info {

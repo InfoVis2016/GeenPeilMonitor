@@ -60,6 +60,7 @@ angular.module('infovisApp')
             })
             .on('mouseover', function(d) {
               if ( d.properties.WATER === 'JA' ) { return; }
+              d3.select(this).style('fill', '#555555');
               info_title.text(d.properties.GM_NAAM);
               info_subtitle.text('Aantal inwoners: ' + d.properties.AANT_INW);
               info.attr('opacity', 1);
@@ -67,6 +68,7 @@ angular.module('infovisApp')
             .on('mouseout', function(d) {
               if ( d.properties.WATER === 'JA' ) { return; }
               info.attr('opacity', 0);
+              d3.select(this).style('fill', d.properties.in_favor ? '#5FFF60' : '#E53F31');
             })
             .attr('stroke', function (d) {
               if ( d.properties.WATER === 'JA' ) {
