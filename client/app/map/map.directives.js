@@ -53,7 +53,7 @@ angular.module('infovisApp')
             .attr('class', 'segment')
             .attr('fill', function(d) {
               if ( d.properties.WATER === 'JA' ) {
-                return '#fff';
+                return 'rgba(0,0,0,0)';
               } else {
                 return d.properties.in_favor ? '#5FFF60' : '#E53F31';
               }
