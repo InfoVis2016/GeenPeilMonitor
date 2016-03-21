@@ -75,7 +75,13 @@ angular.module('infovisApp')
               if ( d.properties.WATER === 'JA' ) {
                 return '#fff';
               } else {
-                return colors(d.properties.AANT_INW);
+                var count = 0;
+                for ( var key in parties ) {
+                  if ( parties.hasOwnProperty(key) ) {
+                    count = parties[key] ? count + d.properties[key] : count - d.properties[key];
+                  }
+                }
+                return count > 0 ? 'green' : 'red'
               }
             })
             .on('mouseover', function(d) {
