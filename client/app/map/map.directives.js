@@ -98,7 +98,7 @@ angular.module('infovisApp')
               if ( d.properties.WATER === 'JA' ) {
                 return '#fff';
               } else {
-                return colors(d.properties.AANT_INW);
+                return '#ccc';
               }
             })
             .attr('id', function(d) {
