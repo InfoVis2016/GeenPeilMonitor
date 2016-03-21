@@ -6,6 +6,7 @@ angular.module('infovisApp')
       .state('meteo', {
         url: '/meteo',
         templateUrl: 'app/meteo/meteo.html',
-        controller: 'MeteoCtrl'
+        controller: 'MeteoController',
+        controllerAs: 'meteo'
       });
   });

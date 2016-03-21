@@ -39,24 +39,35 @@ angular.module('infovisApp')
               .text(function(d) { return d.text; });
         }
 
-        var layout = d3.layout.cloud()
-          .size([width, height])
-          .padding(5)
-          .rotate(function() {
-            return ~~(Math.random() * 2) * 90;
-          })
-          .font('Impact')
-          .fontSize(function(d) {
-            return d.size;
-          })
-          .on('end', draw);
+        
+
 
         // Get data from server
         d3.json('words.json', function(error, data) {
           if (error) { throw error; }
+          
+          var sizeScale = d3.scale.linear()
+                    .domain([0, d3.max(data, function(d) { 
+                    	return d.size; })])
+                    .range([0, width / 1.5]);
+
+          var layout = d3.layout.cloud()
+          	.size([width, height])
+          	.padding(5)
+          	.rotate(function() {
+            	return ~~(Math.random() * 2) * 90;
+          	})
+          	.font('Impact')
+          	.fontSize(function(d) {
+            	return sizeScale(d.size);
+          	})
+          	.on('end', draw);        
           layout.words(data);
           layout.start();
         });
+        
+
+        
       }
     };
   });
