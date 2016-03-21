@@ -1,6 +1,7 @@
 'use strict';
 
-/* globals d3, colorbrewer */
+/* jshint bitwise: false */
+/* globals d3 */
 
 /**
  * Infovis directives
@@ -29,9 +30,13 @@ angular.module('infovisApp')
             .selectAll('text')
               .data(words)
             .enter().append('text')
-              .style('font-size', function(d) { return d.size + 'px'; })
+              .style('font-size', function(d) {
+                return d.size + 'px';
+              })
               .style('font-family', 'Impact')
-              .style('fill', function(d, i) { return colors(i); })
+              .style('fill', function(d) {
+                return colors(d.size);
+              })
               .attr('text-anchor', 'middle')
               .attr('transform', function(d) {
                 return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')';
@@ -39,17 +44,15 @@ angular.module('infovisApp')
               .text(function(d) { return d.text; });
         }
 
-        
-
-
         // Get data from server
         d3.json('words.json', function(error, data) {
           if (error) { throw error; }
           
           var sizeScale = d3.scale.linear()
-                    .domain([0, d3.max(data, function(d) { 
-                    	return d.size; })])
-                    .range([0, width / 1.5]);
+            .domain([0, d3.max(data, function(d) {
+              return d.size;
+            })])
+            .range([0, width / 1.5]);
 
           var layout = d3.layout.cloud()
           	.size([width, height])
@@ -65,9 +68,6 @@ angular.module('infovisApp')
           layout.words(data);
           layout.start();
         });
-        
-
-        
       }
     };
   });
