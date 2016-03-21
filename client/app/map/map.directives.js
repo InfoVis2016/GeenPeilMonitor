@@ -75,7 +75,7 @@ angular.module('infovisApp')
                     count = parties[key] ? count + d.properties[key] : count - d.properties[key];
                   }
                 }
-                return count > 0 ? 'green' : 'red'
+                return count > 0 ? '#5FFF60' : '#E53F31';
               }
             })
             .on('mouseover', function(d) {
