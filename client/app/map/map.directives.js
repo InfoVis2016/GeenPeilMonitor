@@ -75,13 +75,18 @@ angular.module('infovisApp')
               if ( d.properties.WATER === 'JA' ) {
                 return '#fff';
               } else {
-                var count = 0;
+                var count_for = 0;
+                var count_against = 0;
                 for ( var key in parties ) {
                   if ( parties.hasOwnProperty(key) ) {
-                    count = parties[key] ? count + d.properties[key] : count - d.properties[key];
+                    if ( parties[key] ) {
+                      count_for += d.properties[key];
+                    } else {
+                      count_against += d.properties[key];
+                    }
                   }
                 }
-                return count > 0 ? 'green' : 'red'
+                return count_for >= count_against ? 'green' : 'red';
               }
             })
             .on('mouseover', function(d) {
