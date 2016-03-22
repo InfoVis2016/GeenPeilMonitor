@@ -29,9 +29,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <navbar></navbar>
     <div ui-view=""></div>
-    <footer></footer>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -52,6 +50,8 @@
       <script src="bower_components/angular-material/angular-material.js"></script>
       <script src="bower_components/d3/d3.js"></script>
       <script src="bower_components/colorbrewer/colorbrewer.js"></script>
+      <script src="bower_components/topojson/topojson.js"></script>
+      <script src="bower_components/d3-cloud/build/d3.layout.cloud.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
@@ -62,11 +62,17 @@
       <script src="app/map/map.directives.js"></script>
       <script src="app/bar/bar.directives.js"></script>
       <script src="app/bar/bar.js"></script>
+      <script src="app/cloud/cloud.controller.js"></script>
+      <script src="app/cloud/cloud.directives.js"></script>
+      <script src="app/cloud/cloud.js"></script>
       <script src="app/main/main.controller.js"></script>
       <script src="app/main/main.js"></script>
       <script src="app/map/map.controller.js"></script>
       <script src="app/bar/bar.controller.js"></script>
       <script src="app/map/map.js"></script>
+      <script src="app/meteo/meteo.controller.js"></script>
+      <script src="app/meteo/meteo.directives.js"></script>
+      <script src="app/meteo/meteo.js"></script>
       <script src="components/footer/footer.directive.js"></script>
       <script src="components/navbar/navbar.controller.js"></script>
       <script src="components/navbar/navbar.directive.js"></script>

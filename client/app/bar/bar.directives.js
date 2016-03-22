@@ -14,8 +14,23 @@ angular.module('infovisApp')
       template: '<div class="bar-chart"></div>',
       link: function (scope, element) {
 
+        var monthNames = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December'
+        ];
+
         var margin = {
-          top: 30,
+          top: 80,
           right: 20,
           bottom: 100,
           left: 50
@@ -49,8 +64,9 @@ angular.module('infovisApp')
 
         var svg = d3.select(element[0])
           .append('svg')
-          .attr('width', width + margin.left + margin.right)
-          .attr('height', height + margin.top + margin.bottom);
+          .attr('preserveAspectRatio', 'xMinYMin meet')
+          .attr('viewBox', '0 0 960 500')
+          .attr('class', 'svg');
 
         var main = svg.append('g')
           .attr('class', 'main')
@@ -64,6 +80,20 @@ angular.module('infovisApp')
           .x(xOverview)
           .on('brush', brushed);
 
+        // Info container
+        var info = svg.append('g')
+          .attr('opacity', 0)
+          .attr('class', 'info');
+        var info_title = info.append('text')
+          .attr('x', 750)
+          .attr('y', 20)
+          .attr('class', 'info-title');
+        var info_subtitle = info.append('text')
+          .attr('x', 750)
+          .attr('y', 45)
+          .text('asdfasdf')
+          .attr('class', 'info-subtitle');
+
         // Get data from server
         d3.json('tweets.json', function(error, data) {
           if (error) { throw error; }
@@ -71,24 +101,18 @@ angular.module('infovisApp')
         });
 
         scope.parseData = function(data) {
-          var seen_dates = [];
-          var clean_data = [];
-          var parseDate = d3.time.format('%d/%m/%Y').parse;
-          _.each(data, function(d) {
-            if ( seen_dates.indexOf(d.date) > -1 ) {
-              _.find(clean_data, function(cd) {
-                return cd._date === d.date;
-              }).total += d.count;
-            } else {
-              clean_data.push({
-                _date: d.date,
-                date: parseDate(d.date), // turn the date string into a date object
-                total: d.count
-              });
-              seen_dates.push(d.date);
-            }
-          });
-          scope.render(clean_data);
+          var _data = [];
+          var parseDate = d3.time.format('%Y-%m-%d').parse;
+          for ( var date in data ) {
+            if ( !data.hasOwnProperty(date) ) { return; }
+            _data.push({
+              date: parseDate(date),
+              total: data[date].count,
+              words: data[date].word_counts,
+              users: data[date].user_counts
+            });
+          }
+          scope.render(_data);
         };
 
         scope.render = function(data) {
@@ -119,10 +143,21 @@ angular.module('infovisApp')
             .data(data)
             .enter().append('rect')
               .attr('class', 'bar')
-              .attr('width', 10)
-              .attr('x', function(d) { return x(d.date); })
-              .attr('y', function(d) { return y(d.total); })
-              .attr('height', function(d) { return height - y(d.total); });
+              .attr('width', 25)
+              .attr('x', function(d) { return x(d.date)+1; })
+              .attr('y', function(d) { return y(d.total)-1; })
+              .attr('height', function(d) { return height - y(d.total); })
+              .on('mouseover', function(d) {
+                var day = d.date.getDate();
+                var month = monthNames[d.date.getMonth()];
+                var year = d.date.getFullYear();
+                info_title.text(day + ' ' + month + ' ' + year);
+                info_subtitle.text('Tweet count: ' + d.total);
+                info.attr('opacity', 1);
+              })
+              .on('mouseout', function() {
+                info.attr('opacity', 0);
+              });
 
           overview.append('g')
             .attr('class', 'bars')
@@ -130,9 +165,9 @@ angular.module('infovisApp')
             .data(data)
             .enter().append('rect')
               .attr('class', 'bar')
-              .attr('x', function(d) { return xOverview(d.date) - 3; })
-              .attr('width', 6)
-              .attr('y', function(d) { return yOverview(d.total); })
+              .attr('x', function(d) { return xOverview(d.date)+1; })
+              .attr('width', 25)
+              .attr('y', function(d) { return yOverview(d.total)-1; })
               .attr('height', function(d) { return heightOverview - yOverview(d.total); });
 
           // add the brush target area on the overview chart
@@ -154,7 +189,7 @@ angular.module('infovisApp')
           x.domain(brush.empty() ? xOverview.domain() : brush.extent());
 
           // redraw the bars on the main chart
-          main.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.date) + ',0)'; });
+          main.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.date)+1 + ',0)'; });
 
           // redraw the x axis of the main chart
           main.select('.x.axis').call(xAxis);

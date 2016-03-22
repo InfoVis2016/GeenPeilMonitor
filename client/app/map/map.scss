@@ -1,1 +1,43 @@
+.map-chart {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
+  @include user-select(none);
 
+  .svg {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  .map > .segment {
+    stroke-width: 0.5;
+    cursor: pointer;
+    stroke-linejoin: round;
+    shape-rendering: crispEdges;
+    will-change: fill;
+    transition: fill 0.25s ease;
+  }
+
+  .info {
+    will-change: opacity;
+    transition: opacity 0.5s ease;
+
+    .info-title,
+    .info-subtitle {
+      fill: #333;
+      shape-rendering: crispEdges;
+    }
+    .info-title {
+      font-size: 20px;
+      stroke: #333;
+    }
+    .info-subtitle {
+      font-size: 14px;
+    }
+  }
+}

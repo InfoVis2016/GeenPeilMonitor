@@ -1,0 +1,47 @@
+.meteo {
+  padding: 15px;
+  color: #cccccc;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 14px;
+  -webkit-font-smoothing: antialiased;
+  @include user-select(none);
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+/* Stlyes for d3 barchart */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #cccccc;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: #cccccc;
+  stroke: #cccccc;
+}
+
+.bar {
+  fill: #ffa500;
+}
+
+.bar:hover {
+  fill: #ff4500;
+}
+
+.year-label {
+  fill: #cccccc;
+  stroke: #cccccc;
+  font-size: 35px;
+}
+
+.bar-label,
+.bar-label-hover {
+  fill: #ff4500;
+  stroke: #ff4500;
+  pointer-events: none;
+}
