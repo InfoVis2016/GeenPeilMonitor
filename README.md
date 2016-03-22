@@ -4,6 +4,7 @@
 - [Material](https://material.angularjs.org/)
 - [Scrollorama](http://johnpolacek.github.io/scrollorama/)
 - [More Scrollorama](http://johnpolacek.github.io/superscrollorama/)
+- [Even more scroll magic](http://scrollmagic.io/)
 - [Icons](https://design.google.com/icons/)
 - [More icons](https://klarsys.github.io/angular-material-icons/) [animated]
 - [Fake data](http://www.mockaroo.com/) [for prototyping]
