@@ -30,12 +30,6 @@ angular.module('infovisApp')
          * @param data List of objects with words and sizes
          */
         scope.setup = function (data) {
-          var sizeScale = d3.scale.linear()
-            .domain([0, d3.max(data, function(d) {
-              return d.size;
-            })])
-            .range([0, width / 1.5]);
-
           var layout = d3.layout.cloud()
             .size([width, height])
             .padding(5)
@@ -44,7 +38,7 @@ angular.module('infovisApp')
             })
             .font('Impact')
             .fontSize(function(d) {
-              return sizeScale(d.size);
+              return d.size;
             })
             .on('end', scope.draw);
           layout.words(data);
