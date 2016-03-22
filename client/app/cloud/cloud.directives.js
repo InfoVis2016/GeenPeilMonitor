@@ -1,7 +1,7 @@
 'use strict';
 
 /* jshint bitwise: false */
-/* globals d3 */
+/* globals d3, colorbrewer */
 
 /**
  * Infovis directives
@@ -15,7 +15,9 @@ angular.module('infovisApp')
       template: '<div class="cloud"></div>',
       link: function (scope, element) {
 
-        var colors = d3.scale.category20();
+        var colors = d3.scale.quantize()
+          .range(colorbrewer.RdYlGn[11]);
+
         var width = 960;
         var height = 500;
 
@@ -30,6 +32,10 @@ angular.module('infovisApp')
          * @param data List of objects with words and sizes
          */
         scope.setup = function (data) {
+          colors.domain([d3.max(data, function(d) {
+            return d.size;
+          }), 0]);
+
           var layout = d3.layout.cloud()
             .size([width, height])
             .padding(5)
