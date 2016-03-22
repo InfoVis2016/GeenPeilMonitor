@@ -8,6 +8,7 @@ angular.module('infovisApp', [
   'btford.socket-io',
   'ui.router',
   'ngMaterial',
+  'hj.scrollMagic',
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
