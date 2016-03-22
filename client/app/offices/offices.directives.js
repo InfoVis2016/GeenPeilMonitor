@@ -55,7 +55,7 @@ angular.module('infovisApp')
               if ( d.properties.WATER === 'JA' ) {
                 return 'rgba(0,0,0,0)';
               } else {
-                return d.properties.in_favor ? '#5FFF60' : '#E53F31';
+                return d.properties.stembureau_provincie === d.properties.stembureau_geenpeil ? '#5FFF60' : '#E53F31';
               }
             })
             .on('mouseover', function(d) {
@@ -68,7 +68,7 @@ angular.module('infovisApp')
             .on('mouseout', function(d) {
               if ( d.properties.WATER === 'JA' ) { return; }
               info.attr('opacity', 0);
-              d3.select(this).style('fill', d.properties.in_favor ? '#5FFF60' : '#E53F31');
+              d3.select(this).style('fill', d.properties.stembureau_provincie === d.properties.stembureau_geenpeil ? '#5FFF60' : '#E53F31');
             })
             .attr('stroke', function (d) {
               if ( d.properties.WATER === 'JA' ) {
