@@ -1,6 +1,6 @@
 'use strict';
 
-/* globals d3, colorbrewer, topojson */
+/* globals d3, topojson */
 
 /**
  * Infovis directives
@@ -47,25 +47,20 @@ angular.module('infovisApp')
 
           var subunits = topojson.feature(data, data.objects.gem);
 
-          var colors = d3.scale.quantize()
-            .domain([d3.max(subunits.features, function(d) {
-              return d.properties.AANT_INW;
-            }), 0])
-            .range(colorbrewer.RdYlGn[11]);
-
           map.selectAll('path')
             .data(subunits.features)
             .enter().append('path')   // if not enough elements create a new path
             .attr('class', 'segment')
             .attr('fill', function(d) {
               if ( d.properties.WATER === 'JA' ) {
-                return '#fff';
+                return 'rgba(0,0,0,0)';
               } else {
-                return colors(d.properties.AANT_INW);
+                return d.properties.in_favor ? '#5FFF60' : '#E53F31';
               }
             })
             .on('mouseover', function(d) {
               if ( d.properties.WATER === 'JA' ) { return; }
+              d3.select(this).style('fill', '#555555');
               info_title.text(d.properties.GM_NAAM);
               info_subtitle.text('Aantal inwoners: ' + d.properties.AANT_INW);
               info.attr('opacity', 1);
@@ -73,12 +68,13 @@ angular.module('infovisApp')
             .on('mouseout', function(d) {
               if ( d.properties.WATER === 'JA' ) { return; }
               info.attr('opacity', 0);
+              d3.select(this).style('fill', d.properties.in_favor ? '#5FFF60' : '#E53F31');
             })
             .attr('stroke', function (d) {
               if ( d.properties.WATER === 'JA' ) {
                 return '#fff';
               } else {
-                return colors(d.properties.AANT_INW);
+                return '#ccc';
               }
             })
             .attr('id', function(d) {
