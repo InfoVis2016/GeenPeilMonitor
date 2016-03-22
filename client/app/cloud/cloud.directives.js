@@ -20,7 +20,7 @@ angular.module('infovisApp')
         var height = 500;
 
         // Get data from server
-        d3.json('words.json', function(error, data) {
+        d3.json('tweets.json', function(error, data) {
           if (error) { throw error; }
           scope.setup(data);
         });
