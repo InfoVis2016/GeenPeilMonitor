@@ -27,6 +27,9 @@ module.exports = function(config) {
       'client/bower_components/colorbrewer/colorbrewer.js',
       'client/bower_components/topojson/topojson.js',
       'client/bower_components/d3-cloud/build/d3.layout.cloud.js',
+      'client/bower_components/gsap/src/uncompressed/TweenMax.js',
+      'client/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
+      'client/bower_components/angular-scroll-magic/angular-scroll-magic.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',
