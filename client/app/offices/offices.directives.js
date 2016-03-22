@@ -37,10 +37,15 @@ angular.module('infovisApp')
           .attr('x', 500)
           .attr('y', 50)
           .attr('class', 'info-title');
-        var info_subtitle = info.append('text')
+        var regular_num = info.append('text')
           .attr('x', 500)
           .attr('y', 75)
           .attr('class', 'info-subtitle');
+        var current_num = info.append('text')
+          .attr('x', 500)
+          .attr('y', 100)
+          .attr('class', 'info-subtitle');
+
 
         d3.json('map.json', function(error, data) {
           if (error) { throw error; }
@@ -62,7 +67,8 @@ angular.module('infovisApp')
               if ( d.properties.WATER === 'JA' ) { return; }
               d3.select(this).style('fill', '#555555');
               info_title.text(d.properties.GM_NAAM);
-              info_subtitle.text('Aantal inwoners: ' + d.properties.AANT_INW);
+              regular_num.text('Regular number of voting offices open: ' + d.properties.stembureau_provincie);
+              current_num.text('Current number of voting offices open: ' + d.properties.stembureau_geenpeil);
               info.attr('opacity', 1);
             })
             .on('mouseout', function(d) {
