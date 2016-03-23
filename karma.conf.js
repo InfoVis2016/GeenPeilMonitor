@@ -32,6 +32,10 @@ module.exports = function(config) {
       'client/bower_components/velocity/velocity.js',
       'client/bower_components/velocity/velocity.ui.js',
       'client/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
+      'client/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js',
+      'client/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/animation.velocity.js',
+      'client/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js',
+      'client/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js',
       'client/bower_components/angular-scroll-magic/angular-scroll-magic.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
