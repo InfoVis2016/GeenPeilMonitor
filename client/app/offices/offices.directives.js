@@ -35,7 +35,7 @@ angular.module('infovisApp')
           .attr('class', 'info');
         var info_title = info.append('text')
           .attr('x', 150)
-          .attr('y', 75)
+          .attr('y', 100)
           .attr('class', 'info-title');
 
         d3.json('map.json', function(error, data) {
