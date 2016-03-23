@@ -222,7 +222,7 @@ angular.module('infovisApp')
             })
             .attr('stroke', function (d) {
               if ( d.properties.WATER === 'JA' ) {
-                return '#fff';
+                return 'rgba(0,0,0,0)';
               } else {
                 return '#ccc';
               }
