@@ -27,17 +27,49 @@
         <img ng-src="assets/images/speaker.png" sm-tween="show-speaker" duration="1" from-vars="{bottom: '50px'}" to-vars="{bottom: '180px'}" />
       </div>
 
-      <div sm-scene="show-slide1" duration="50%" offset="2200" trigger-hook="0.25"></div>
-      <div class="slide slide-1" sm-tween="show-slide1" duration="1" from-vars="{opacity: 0}" to-vars="{opacity: 1}">
+      <div sm-scene="slide1" duration="50%" offset="2200" trigger-hook="0.25"></div>
+      <div class="slide slide1" sm-tween="slide1" duration="1" from-vars="{opacity: 0}" to-vars="{opacity: 1}" sm-class-toggle="slide2" classes="hide">
         <div class="slide-content">
           <img ng-src="assets/images/geenpeil_glow.png" />
           <h1>So what is it about?!</h1>
         </div>
       </div>
 
+      <div sm-scene="slide2" duration="50%" offset="3000" trigger-hook="0.25"></div>
+      <div class="slide slide2" sm-tween="slide2" duration="1" from-vars="{opacity: 0}" to-vars="{opacity: 1}" sm-class-toggle="slide3" classes="hide">
+        <div class="slide-content">
+          <h1>text slide 2</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide3" duration="50%" offset="4000" trigger-hook="0.25"></div>
+      <div class="slide slide3" sm-tween="slide3" duration="1" from-vars="{opacity: 0}" to-vars="{opacity: 1}" sm-class-toggle="slide4" classes="hide">
+        <div class="slide-content">
+          <h1>text slide 3</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide4" duration="50%" offset="5000" trigger-hook="0.25"></div>
+      <div class="slide slide4" sm-tween="slide4" duration="1" from-vars="{opacity: 0}" to-vars="{opacity: 1}" sm-class-toggle="slide5" classes="hide">
+        <div class="slide-content">
+          <h1>text slide 4</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide5" duration="50%" offset="6000" trigger-hook="0.25"></div>
+      <div class="slide slide5" sm-tween="slide5" duration="1" from-vars="{opacity: 0}" to-vars="{opacity: 1}" sm-class-toggle="slide6" classes="hide">
+        <div class="slide-content">
+          <h1>text slide 4</h1>
+        </div>
+      </div>
+
+
       <div class="spacer"></div>
       <div class="spacer"></div>
-      <img ng-src="assets/images/jean-claude-juncker.png" />
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
       <div class="spacer"></div>
       <h1>So what is it?</h1>
       <h2>GeenPeil is an initiative to hold a referendum in The Netherlands about the European Union Association Agreement with Ukraine.</h2>
