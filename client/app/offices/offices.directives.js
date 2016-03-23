@@ -17,15 +17,15 @@ angular.module('infovisApp')
         var svg = d3.select(element[0])
           .append('svg')
           .attr('preserveAspectRatio', 'xMinYMin meet')
-          .attr('viewBox', '0 0 960 500')
+          .attr('viewBox', '0 0 1280 960')
           .attr('class', 'svg');
 
         var map = svg.append('g')
           .attr('class', 'map');
 
         var projection = d3.geo.mercator()
-          .scale(5000)
-          .translate([-250, 5600]);
+          .scale(6600)
+          .translate([-300, 7450]);
 
         var path = d3.geo.path()
           .projection(projection);
@@ -34,18 +34,9 @@ angular.module('infovisApp')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
-          .attr('x', 500)
-          .attr('y', 50)
-          .attr('class', 'info-title');
-        var regular_num = info.append('text')
-          .attr('x', 500)
+          .attr('x', 150)
           .attr('y', 75)
-          .attr('class', 'info-subtitle');
-        var current_num = info.append('text')
-          .attr('x', 500)
-          .attr('y', 100)
-          .attr('class', 'info-subtitle');
-
+          .attr('class', 'info-title');
 
         d3.json('map.json', function(error, data) {
           if (error) { throw error; }
@@ -67,8 +58,6 @@ angular.module('infovisApp')
               if ( d.properties.WATER === 'JA' ) { return; }
               d3.select(this).style('fill', '#555555');
               info_title.text(d.properties.GM_NAAM);
-              regular_num.text('Regular number of voting offices open: ' + d.properties.stembureau_provincie);
-              current_num.text('Current number of voting offices open: ' + d.properties.stembureau_geenpeil);
               info.attr('opacity', 1);
             })
             .on('mouseout', function(d) {
@@ -78,7 +67,7 @@ angular.module('infovisApp')
             })
             .attr('stroke', function (d) {
               if ( d.properties.WATER === 'JA' ) {
-                return '#fff';
+                return 'rgba(0,0,0,0)';
               } else {
                 return '#ccc';
               }
