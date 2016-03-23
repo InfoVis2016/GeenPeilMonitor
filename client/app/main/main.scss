@@ -10,9 +10,100 @@
   }
   .spacer {
     display: block;
-    height: 1000px;
+    height: 10000px;
   }
   ul {
   	list-style-type: none;
+  }
+
+  .landing {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    z-index: 0;
+
+    .tip {
+      margin-top: 150px;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+    }
+  }
+
+  .podium {
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    z-index: 2;
+    img {
+      position: absolute;
+      left: 100px;
+      top: -1000px;
+    }
+  }
+
+  .speaker {
+    position: fixed;
+    bottom: 0;
+    opacity: 0;
+    z-index: 1;
+    img {
+      position: absolute;
+      left: 148px;
+      bottom: 0;
+    }
+  }
+
+  .slide {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    &.show {
+      opacity: 1;
+    }
+    &.hide {
+      opacity: 0;
+    }
+    .slide-content {
+      position: absolute;
+      top: 200px;
+      left: 600px;
+      color: #ffcc00;
+    }
+  }
+
+  .slide1 .slide-content {
+    padding-left: 100px;
+    img {
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  .slide3 .slide-content {
+    position: absolute;
+    top: 150px;
+    left: 600px;
+    right: 0;
+    bottom: 0;
   }
 }

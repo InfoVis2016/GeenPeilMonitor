@@ -8,10 +8,13 @@ angular.module('infovisApp', [
   'btford.socket-io',
   'ui.router',
   'ngMaterial',
+  'hj.scrollMagic',
 ])
-  .config(function($urlRouterProvider, $locationProvider) {
-    $urlRouterProvider
-      .otherwise('/');
+  .config(function($urlRouterProvider, $locationProvider, scrollMagicProvider) {
+
+    $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
+
+    scrollMagicProvider.addIndicators = true;
   });

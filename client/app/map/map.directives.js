@@ -44,102 +44,122 @@ angular.module('infovisApp')
         var path = d3.geo.path()
           .projection(projection);
 
+
         var info = svg.append('g')
           .attr('opacity', 0)
           .attr('class', 'info');
+
+       var borderPath = info.append("rect")
+          .attr("x", 490)
+          .attr("y", 55)
+          .attr("height", 160)
+          .attr("width", 120)
+          .style("stroke", '#5FFF60')
+          .style("fill", "none")
+          .style("stroke-width", 2);
+        var borderPath1 = info.append("rect")
+          .attr("x", 615)
+          .attr("y", 55)
+          .attr("height", 160)
+          .attr("width", 120)
+          .style("stroke", '#E53F31')
+          .style("fill", "none")
+          .style("stroke-width", 2);
+
         var info_title = info.append('text')
           .attr('x', 500)
           .attr('y', 50)
           .attr('class', 'info-title');
         var info_subtitle = info.append('text')
           .attr('x', 500)
-          .attr('y', 75)
+          .attr('y', 70)
           .attr('class', 'info-subtitle');
            var info_subtitle1 = info.append('text')
           .attr('x', 500)
-          .attr('y', 100)
+          .attr('y', 90)
           .attr('class', 'info-subtitle');
            var info_subtitle2 = info.append('text')
           .attr('x', 500)
-          .attr('y', 125)
+          .attr('y', 110)
           .attr('class', 'info-subtitle');
            var info_subtitle3 = info.append('text')
           .attr('x', 500)
-          .attr('y', 150)
+          .attr('y', 130)
           .attr('class', 'info-subtitle');
            var info_subtitle4 = info.append('text')
           .attr('x', 500)
-          .attr('y', 175)
+          .attr('y', 150)
           .attr('class', 'info-subtitle');
            var info_subtitle5 = info.append('text')
           .attr('x', 500)
-          .attr('y', 200)
+          .attr('y', 170)
           .attr('class', 'info-subtitle');
            var info_subtitle6 = info.append('text')
           .attr('x', 500)
-          .attr('y', 225)
+          .attr('y', 190)
           .attr('class', 'info-subtitle');
           var info_subtitle7 = info.append('text')
           .attr('x', 500)
-          .attr('y', 250)
+          .attr('y', 210)
           .attr('class', 'info-subtitle');
            var info_subtitleattendence = info.append('text')
           .attr('x', 500)
-          .attr('y', 300)
+          .attr('y', 250)
           .attr('class', 'info-subtitle');
           var info_subtitlepotential = info.append('text')
           .attr('x', 500)
-          .attr('y', 325)
+          .attr('y', 275)
           .attr('class', 'info-subtitle');
           
     var info_subtitleagainst = info.append('text')
-          .attr('x', 650)
-          .attr('y', 75)
+          .attr('x', 620)
+          .attr('y', 70)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst1 = info.append('text')
-          .attr('x', 650)
-          .attr('y', 100)
+          .attr('x', 620)
+          .attr('y', 90)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst2 = info.append('text')
-          .attr('x', 650)
-          .attr('y', 125)
+          .attr('x', 620)
+          .attr('y', 110)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst3 = info.append('text')
-          .attr('x', 650)
-          .attr('y', 150)
+          .attr('x', 620)
+          .attr('y', 130)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst4 = info.append('text')
-          .attr('x', 650)
-          .attr('y', 175)
+          .attr('x', 620)
+          .attr('y', 150)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst5 = info.append('text')
-          .attr('x', 650)
-          .attr('y', 200)
+          .attr('x', 620)
+          .attr('y', 170)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst6 = info.append('text')
-          .attr('x', 650)
-          .attr('y', 250)
+          .attr('x', 620)
+          .attr('y', 210)
           .attr('class', 'info-subtitle');
            var info_demograpics= info.append('text')
           .attr('x', 500)
-          .attr('y', 375)
+          .attr('y', 310)
           .attr('class', 'info-subtitle');
           var info_demograpics1= info.append('text')
           .attr('x', 500)
-          .attr('y', 400)
+          .attr('y', 335)
           .attr('class', 'info-subtitle');
           var info_demograpics2= info.append('text')
           .attr('x', 500)
-          .attr('y', 425)
+          .attr('y', 360)
           .attr('class', 'info-subtitle');
           var info_demograpics3= info.append('text')
           .attr('x', 500)
-          .attr('y', 450)
+          .attr('y', 385)
           .attr('class', 'info-subtitle');
           var info_demograpics4= info.append('text')
           .attr('x', 500)
-          .attr('y', 475)
+          .attr('y', 410)
           .attr('class', 'info-subtitle');
+
 
         d3.json('map.json', function(error, data) {
           if (error) { throw error; }
@@ -160,20 +180,23 @@ angular.module('infovisApp')
             .on('mouseover', function(d) {
               if ( d.properties.WATER === 'JA' ) { return; }
               d3.select(this).style('fill', '#555555');
+              
+
               info_title.text(d.properties.GM_NAAM);
               info_subtitle.text('Yes Camp:')
+              
               info_subtitle1.text('50PLUS: ' + d.properties['50PLUS']);
-              info_subtitle2.text('CDA: ' + d.properties['"Christen Democratisch App\u00e8l (CDA)']);
+              info_subtitle2.text('CDA: ' + d.properties['Christen Democratisch App\u00e8l (CDA)']);
               info_subtitle3.text('D66: ' + d.properties['Democraten 66 (D66)']);
-              info_subtitle4.text('GROENLINKS: ' + d.properties['GROENLINKS']);
+              info_subtitle4.text('GL: ' + d.properties['GROENLINKS']);
               info_subtitle5.text('PvdA: ' + d.properties['Partij van de Arbeid (P.v.d.A.)']);
               info_subtitle6.text('VVD: ' + d.properties['VVD']);
-              var totalyes = d.properties['50PLUS']+d.properties['Democraten 66 (D66)']+d.properties['GROENLINKS']+d.properties['Partij van de Arbeid (P.v.d.A.)']+d.properties['VVD'];
+              var totalyes = d.properties['50PLUS']+d.properties['Democraten 66 (D66)']+d.properties['GROENLINKS']+d.properties['Partij van de Arbeid (P.v.d.A.)']+d.properties['VVD']+d.properties['Christen Democratisch App\u00e8l (CDA)'];
               info_subtitle7.text('Total: ' + totalyes);
               info_subtitleattendence.text('Attendence: ' + d.properties['Opkomstpercentage'])
               info_subtitlepotential.text('Potential voters: ' + d.properties['# kiesgerechtigden']);
               info_subtitleagainst.text('No Camp:');
-              info_subtitleagainst1.text('ChristenUnie: ' + d.properties['ChristenUnie']);
+              info_subtitleagainst1.text('CU: ' + d.properties['ChristenUnie']);
               info_subtitleagainst2.text('PVV: ' + d.properties['PVV (Partij voor de Vrijheid)']);
               info_subtitleagainst3.text('PvdD: ' + d.properties['Partij voor de Dieren']);
               info_subtitleagainst4.text('SP: ' + d.properties['SP (Socialistische Partij)']);
@@ -186,10 +209,13 @@ angular.module('infovisApp')
               info_demograpics2.text('Female: '+ d.properties['AANT_VROUW']);
               info_demograpics3.text('Percentage ethnic minorities: '+ alloch + '%');
               info_demograpics4.text('Urbanity level: '+d.properties['STED']);
+               
+              borderPath.attr('opacity', 1);
               info.attr('opacity', 1);
             })
             .on('mouseout', function(d) {
               if ( d.properties.WATER === 'JA' ) { return; }
+              borderPath.attr('opacity', 0);
               info.attr('opacity', 0);
               d3.select(this).style('fill', d.properties.in_favor ? '#5FFF60' : '#E53F31');
               info_title.text();
