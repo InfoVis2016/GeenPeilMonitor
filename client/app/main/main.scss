@@ -66,4 +66,24 @@
       bottom: 0;
     }
   }
+
+  .slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    .slide-content {
+      position: absolute;
+      top: 200px;
+      left: 800px;
+      color: #ffcc00;
+    }
+  }
+
+  .slide-1 .slide-content img {
+    width: 300px;
+    margin: 0 auto;
+  }
 }
