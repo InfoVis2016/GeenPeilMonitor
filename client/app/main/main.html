@@ -1,7 +1,16 @@
 <div layout="column" class="main" ng-cloak>
 	<md-content class="md-padding" layout-xs="column" layout="row">
     <div flex-xs flex-gt-xs="100" layout="column">
-      <img ng-src="assets/images/geenpeil.png" />
+
+      <div sm-scene="s1" duration="80%" offset="100" trigger-hook="0.25">
+        <span sm-scene="toggle-s1" trigger-element="null" duration="50%" offset="800" trigger-hook="0.5"></span>
+        <div sm-tween="s1" duration="1" vars="{scale: 3, yoyo: true, repeat: 1}" sm-class-toggle="toggle-s1" classes="pink">
+          <div sm-tween="s1" duration="1" from-vars="{opacity: 1}" to-vars="{opacity: 0}">
+            <img ng-src="assets/images/geenpeil.png" />
+          </div>
+        </div>
+      </div>
+
       <div class="spacer"></div>
       <img ng-src="assets/images/jean-claude-juncker.png" />
       <div class="spacer"></div>
