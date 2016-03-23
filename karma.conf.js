@@ -12,6 +12,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
+      'client/bower_components/jquery/dist/jquery.js',
       'client/bower_components/angular/angular.js',
       'client/bower_components/angular-resource/angular-resource.js',
       'client/bower_components/angular-cookies/angular-cookies.js',
@@ -28,6 +29,8 @@ module.exports = function(config) {
       'client/bower_components/topojson/topojson.js',
       'client/bower_components/d3-cloud/build/d3.layout.cloud.js',
       'client/bower_components/gsap/src/uncompressed/TweenMax.js',
+      'client/bower_components/velocity/velocity.js',
+      'client/bower_components/velocity/velocity.ui.js',
       'client/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
       'client/bower_components/angular-scroll-magic/angular-scroll-magic.js',
       'client/bower_components/angular-mocks/angular-mocks.js',

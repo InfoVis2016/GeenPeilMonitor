@@ -17,6 +17,9 @@
     "colorbrewer": "^1.0.0",
     "topojson": "^1.6.24",
     "d3-cloud": "^1.2.1",
+    "gsap": "^1.18.2",
+    "velocity": "^1.2.3",
+    "scrollmagic": "^2.0.5",
     "angular-scroll-magic": "^0.0.6"
   },
   "devDependencies": {
