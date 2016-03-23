@@ -2,38 +2,38 @@
 	<md-content class="md-padding" layout-xs="column" layout="row">
     <div flex-xs flex-gt-xs="100" layout="column">
 
-      <div sm-scene="show-landing" duration="50%" offset="100" trigger-hook="0.25"></div>
-      <div class="landing" sm-pin="show-landing">
-        <div sm-tween="hide-landing" duration="5" from-vars="{opacity: 1, scale: 1}" to-vars="{opacity: 0, scale: 5}">
+      <div sm-scene="show-landing" duration="100%" offset="100" trigger-hook="0.25"></div>
+      <div class="landing" sm-pin="show-landing" sm-tween="show-stage" duration="1" vars="{opacity: 0}">
+        <div sm-tween="hide-landing" duration="5" from-vars="{scale: 1}" to-vars="{scale: 10}">
           <img ng-src="assets/images/geenpeil.png" />
         </div>
-        <div class="tip blink" sm-tween="hide-landing" duration="1" vars="{opacity: 0}">
+        <div class="tip blink">
           <img ng-src="assets/images/scroll.svg" />
         </div>
       </div>
 
-      <span sm-scene="hide-landing" trigger-element="null" duration="50%" offset="100" trigger-hook="0.1"></span>
+      <span sm-scene="hide-landing" trigger-element="null" duration="100%" offset="100" trigger-hook="0.1"></span>
       <div class="backdrop" sm-tween="hide-landing" duration="2" from-vars="{opacity: 0}" to-vars="{opacity: 1}">
         <img ng-src="assets/images/backdrop.jpg" />
       </div>
 
-      <div sm-scene="show-stage" duration="50%" offset="400" trigger-hook="0.25"></div>
-      <div class="stage" sm-tween="hide-landing" duration="2" from-vars="{opacity: 0}" to-vars="{opacity: 1}">
+      <div sm-scene="show-stage" duration="100%" offset="500" trigger-hook="0.25"></div>
+      <div class="stage" sm-tween="hide-landing" duration="2" vars="{opacity: 1}">
         <img ng-src="assets/images/stage.png" sm-tween="show-stage" duration="2" from-vars="{bottom: '-400px'}" to-vars="{bottom: '-250px'}" />
       </div>
 
-      <div sm-scene="show-curtain" duration="50%" offset="700" trigger-hook="0.25"></div>
-      <div class="curtain" sm-tween="show-stage" duration="2" from-vars="{opacity: 0, top: '-1500px'}" to-vars="{opacity: 1, top: '0'}">
+      <div sm-scene="show-curtain" duration="100%" offset="800" trigger-hook="0.25"></div>
+      <div class="curtain" sm-tween="show-stage" duration="2" from-vars="{top: '-1700px'}" to-vars="{top: '0'}">
         <img ng-src="assets/images/curtain.png" sm-tween="show-curtain" duration="2" vars="{top: '-700px'}" />
       </div>
 
-      <div sm-scene="show-podium" duration="50%" offset="900" trigger-hook="0.25"></div>
-      <div class="podium" sm-tween="show-stage" duration="1" from-vars="{opacity: 0}" to-vars="{opacity: 1}">
+      <div sm-scene="show-podium" duration="100%" offset="1100" trigger-hook="0.25"></div>
+      <div class="podium" sm-tween="show-stage" duration="1" vars="{opacity: 1}">
         <img ng-src="assets/images/podium.png" sm-tween="show-podium" duration="1" from-vars="{top: '-1000px'}" to-vars="{top: '300px'}" />
       </div>
 
-      <div sm-scene="show-speaker" duration="50%" offset="1300" trigger-hook="0.25"></div>
-      <div class="speaker" sm-tween="show-speaker" duration="1" from-vars="{opacity: 0}" to-vars="{opacity: 1}">
+      <div sm-scene="show-speaker" duration="100%" offset="2500" trigger-hook="0.25"></div>
+      <div class="speaker" sm-tween="show-speaker" duration="1" vars="{opacity: 1}">
         <img ng-src="assets/images/speaker.png" sm-tween="show-speaker" duration="1" from-vars="{bottom: '300px'}" to-vars="{bottom: '570px'}" />
       </div>
 

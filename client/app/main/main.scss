@@ -35,11 +35,18 @@
     bottom: 0;
     z-index: 1;
     opacity: 0;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+    }
   }
 
   .stage {
     position: fixed;
     bottom: 0;
+    opacity: 0;
     z-index: 1;
     img {
       position: absolute;
@@ -51,6 +58,7 @@
   .podium {
     position: fixed;
     top: 0;
+    opacity: 0;
     z-index: 2;
     img {
       position: absolute;
@@ -62,6 +70,7 @@
   .speaker {
     position: fixed;
     bottom: 0;
+    opacity: 0;
     z-index: 1;
     img {
       position: absolute;
@@ -77,7 +86,6 @@
     right: 0;
     bottom: 0;
     z-index: 10;
-    opacity: 0;
     img {
       position: absolute;
       top: 0;
