@@ -163,12 +163,12 @@ angular.module('infovisApp')
               info_title.text(d.properties.GM_NAAM);
               info_subtitle.text('Yes Camp:')
               info_subtitle1.text('50PLUS: ' + d.properties['50PLUS']);
-              info_subtitle2.text('CDA: ' + d.properties['"Christen Democratisch App\u00e8l (CDA)']);
+              info_subtitle2.text('CDA: ' + d.properties['Christen Democratisch App\u00e8l (CDA)']);
               info_subtitle3.text('D66: ' + d.properties['Democraten 66 (D66)']);
               info_subtitle4.text('GROENLINKS: ' + d.properties['GROENLINKS']);
               info_subtitle5.text('PvdA: ' + d.properties['Partij van de Arbeid (P.v.d.A.)']);
               info_subtitle6.text('VVD: ' + d.properties['VVD']);
-              var totalyes = d.properties['50PLUS']+d.properties['Democraten 66 (D66)']+d.properties['GROENLINKS']+d.properties['Partij van de Arbeid (P.v.d.A.)']+d.properties['VVD'];
+              var totalyes = d.properties['50PLUS']+d.properties['Democraten 66 (D66)']+d.properties['GROENLINKS']+d.properties['Partij van de Arbeid (P.v.d.A.)']+d.properties['VVD']+d.properties['Christen Democratisch App\u00e8l (CDA)'];
               info_subtitle7.text('Total: ' + totalyes);
               info_subtitleattendence.text('Attendence: ' + d.properties['Opkomstpercentage'])
               info_subtitlepotential.text('Potential voters: ' + d.properties['# kiesgerechtigden']);
