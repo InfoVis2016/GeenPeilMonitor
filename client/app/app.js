@@ -11,8 +11,8 @@ angular.module('infovisApp', [
   'hj.scrollMagic',
 ])
   .config(function($urlRouterProvider, $locationProvider, scrollMagicProvider) {
-    $urlRouterProvider
-      .otherwise('/');
+
+    $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
 
