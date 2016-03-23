@@ -17,15 +17,15 @@ angular.module('infovisApp')
         var svg = d3.select(element[0])
           .append('svg')
           .attr('preserveAspectRatio', 'xMinYMin meet')
-          .attr('viewBox', '0 0 960 500')
+          .attr('viewBox', '0 0 1280 960')
           .attr('class', 'svg');
 
         var map = svg.append('g')
           .attr('class', 'map');
 
         var projection = d3.geo.mercator()
-          .scale(5000)
-          .translate([-250, 5600]);
+          .scale(6600)
+          .translate([-300, 7450]);
 
         var path = d3.geo.path()
           .projection(projection);
