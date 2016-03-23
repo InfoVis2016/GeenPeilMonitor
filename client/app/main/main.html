@@ -3,16 +3,16 @@
     <div flex-xs flex-gt-xs="100" layout="column">
 
       <div sm-scene="show-landing" duration="100%" offset="100" trigger-hook="0.25"></div>
-      <div class="landing" sm-pin="show-landing" sm-tween="show-podium" duration="1" vars="{opacity: 0}">
-        <div sm-tween="hide-landing" duration="5" from-vars="{scale: 1}" to-vars="{scale: 10}">
+      <div class="landing" sm-pin="show-landing">
+        <div sm-tween="show-landing" duration="5" from-vars="{scale: 1}" to-vars="{scale: 10, opacity: 0, delay: 1}">
           <img ng-src="assets/images/geenpeil.png" />
         </div>
-        <div class="tip blink">
+        <div class="tip blink" sm-tween="hide-landing" duration="1" from-vars="{opacity: 1}" to-vars="{opacity: 0}">
           <img ng-src="assets/images/scroll.svg" />
         </div>
       </div>
 
-      <span sm-scene="hide-landing" trigger-element="null" duration="100%" offset="100" trigger-hook="0.1"></span>
+      <span sm-scene="hide-landing" duration="100%" offset="500" trigger-hook="0.15"></span>
       <div class="backdrop" sm-tween="hide-landing" duration="2" from-vars="{opacity: 0}" to-vars="{opacity: 1}">
         <img ng-src="assets/images/backdrop.jpg" />
       </div>
@@ -24,7 +24,7 @@
 
       <div sm-scene="show-speaker" duration="50%" offset="2000" trigger-hook="0.25"></div>
       <div class="speaker" sm-tween="show-speaker" duration="1" vars="{opacity: 1}">
-        <img ng-src="assets/images/speaker.png" sm-tween="show-speaker" duration="1" from-vars="{bottom: '50px'}" to-vars="{bottom: '180px', delay: 1}" />
+        <img ng-src="assets/images/speaker.png" sm-tween="show-speaker" duration="1" from-vars="{bottom: '50px'}" to-vars="{bottom: '180px'}" />
       </div>
 
       <div class="spacer"></div>
