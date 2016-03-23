@@ -43,18 +43,6 @@
     }
   }
 
-  .stage {
-    position: fixed;
-    bottom: 0;
-    opacity: 0;
-    z-index: 1;
-    img {
-      position: absolute;
-      left: 0;
-      bottom: -400px;
-    }
-  }
-
   .podium {
     position: fixed;
     top: 0;
@@ -62,7 +50,7 @@
     z-index: 2;
     img {
       position: absolute;
-      left: 260px;
+      left: 100px;
       top: -1000px;
     }
   }
@@ -74,25 +62,8 @@
     z-index: 1;
     img {
       position: absolute;
-      left: 308px;
+      left: 148px;
       bottom: 0;
     }
   }
-
-  .curtain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-    }
-  }
-
-
 }
