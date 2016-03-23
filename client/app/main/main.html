@@ -2,15 +2,23 @@
 	<md-content class="md-padding" layout-xs="column" layout="row">
     <div flex-xs flex-gt-xs="100" layout="column">
 
-      <div sm-scene="s1" duration="80%" offset="100" trigger-hook="0.25">
-        <span sm-scene="toggle-s1" trigger-element="null" duration="50%" offset="800" trigger-hook="0.5"></span>
-        <div sm-tween="s1" duration="1" vars="{scale: 3, yoyo: true, repeat: 1}" sm-class-toggle="toggle-s1" classes="pink">
-          <div sm-tween="s1" duration="1" from-vars="{opacity: 1}" to-vars="{opacity: 0}">
+      <div sm-scene="show-landing" duration="50%" offset="100" trigger-hook="0.25"></div>
+
+      <div class="landing" sm-pin="show-landing">
+        <div class="content" sm-tween="hide-landing" duration="2" from-vars="{opacity: 1, scale: 1}" to-vars="{opacity: 0, scale: 1.5}">
+          <div>
             <img ng-src="assets/images/geenpeil.png" />
+          </div>
+          <div class="tip blink">
+            <img ng-src="assets/images/scroll.svg" />
           </div>
         </div>
       </div>
+      <span sm-scene="hide-landing" trigger-element="null" duration="50%" offset="100" trigger-hook="0.1"></span>
 
+
+
+      <div class="spacer"></div>
       <div class="spacer"></div>
       <img ng-src="assets/images/jean-claude-juncker.png" />
       <div class="spacer"></div>
