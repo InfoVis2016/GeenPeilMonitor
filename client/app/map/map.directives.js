@@ -50,7 +50,7 @@ angular.module('infovisApp')
           .attr('class', 'info');
 
        var borderPath = info.append("rect")
-          .attr("x", 490)
+          .attr("x", 0)
           .attr("y", 55)
           .attr("height", 160)
           .attr("width", 120)
@@ -58,7 +58,7 @@ angular.module('infovisApp')
           .style("fill", "none")
           .style("stroke-width", 2);
         var borderPath1 = info.append("rect")
-          .attr("x", 615)
+          .attr("x", 390)
           .attr("y", 55)
           .attr("height", 160)
           .attr("width", 120)
@@ -67,96 +67,96 @@ angular.module('infovisApp')
           .style("stroke-width", 2);
 
         var info_title = info.append('text')
-          .attr('x', 500)
-          .attr('y', 50)
+          .attr('x', 175)
+          .attr('y', 40)
           .attr('class', 'info-title');
         var info_subtitle = info.append('text')
-          .attr('x', 500)
+          .attr('x', 10)
           .attr('y', 70)
           .attr('class', 'info-subtitle');
            var info_subtitle1 = info.append('text')
-          .attr('x', 500)
+          .attr('x', 10)
           .attr('y', 90)
           .attr('class', 'info-subtitle');
            var info_subtitle2 = info.append('text')
-          .attr('x', 500)
+          .attr('x', 10)
           .attr('y', 110)
           .attr('class', 'info-subtitle');
            var info_subtitle3 = info.append('text')
-          .attr('x', 500)
+          .attr('x', 10)
           .attr('y', 130)
           .attr('class', 'info-subtitle');
            var info_subtitle4 = info.append('text')
-          .attr('x', 500)
+          .attr('x', 10)
           .attr('y', 150)
           .attr('class', 'info-subtitle');
            var info_subtitle5 = info.append('text')
-          .attr('x', 500)
+          .attr('x', 10)
           .attr('y', 170)
           .attr('class', 'info-subtitle');
            var info_subtitle6 = info.append('text')
-          .attr('x', 500)
+          .attr('x', 10)
           .attr('y', 190)
           .attr('class', 'info-subtitle');
           var info_subtitle7 = info.append('text')
-          .attr('x', 500)
+          .attr('x', 10)
           .attr('y', 210)
           .attr('class', 'info-subtitle');
            var info_subtitleattendence = info.append('text')
-          .attr('x', 500)
+          .attr('x', 380)
           .attr('y', 250)
           .attr('class', 'info-subtitle');
           var info_subtitlepotential = info.append('text')
-          .attr('x', 500)
+          .attr('x', 380)
           .attr('y', 275)
           .attr('class', 'info-subtitle');
           
     var info_subtitleagainst = info.append('text')
-          .attr('x', 620)
+          .attr('x', 395)
           .attr('y', 70)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst1 = info.append('text')
-          .attr('x', 620)
+          .attr('x', 395)
           .attr('y', 90)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst2 = info.append('text')
-          .attr('x', 620)
+          .attr('x', 395)
           .attr('y', 110)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst3 = info.append('text')
-          .attr('x', 620)
+          .attr('x', 395)
           .attr('y', 130)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst4 = info.append('text')
-          .attr('x', 620)
+          .attr('x', 395)
           .attr('y', 150)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst5 = info.append('text')
-          .attr('x', 620)
+          .attr('x', 395)
           .attr('y', 170)
           .attr('class', 'info-subtitle');
           var info_subtitleagainst6 = info.append('text')
-          .attr('x', 620)
+          .attr('x', 395)
           .attr('y', 210)
           .attr('class', 'info-subtitle');
            var info_demograpics= info.append('text')
-          .attr('x', 500)
+          .attr('x', 360)
           .attr('y', 310)
           .attr('class', 'info-subtitle');
           var info_demograpics1= info.append('text')
-          .attr('x', 500)
+          .attr('x', 360)
           .attr('y', 335)
           .attr('class', 'info-subtitle');
           var info_demograpics2= info.append('text')
-          .attr('x', 500)
+          .attr('x', 360)
           .attr('y', 360)
           .attr('class', 'info-subtitle');
           var info_demograpics3= info.append('text')
-          .attr('x', 500)
+          .attr('x', 360)
           .attr('y', 385)
           .attr('class', 'info-subtitle');
           var info_demograpics4= info.append('text')
-          .attr('x', 500)
+          .attr('x', 360)
           .attr('y', 410)
           .attr('class', 'info-subtitle');
 
@@ -207,7 +207,7 @@ angular.module('infovisApp')
               info_demograpics.text('Population: '+ d.properties['AANT_INW']);
               info_demograpics1.text('Male: '+ d.properties['AANT_MAN']);
               info_demograpics2.text('Female: '+ d.properties['AANT_VROUW']);
-              info_demograpics3.text('Percentage ethnic minorities: '+ alloch + '%');
+              info_demograpics3.text('Ethnic Minorities(%): '+ alloch + '%');
               info_demograpics4.text('Urbanity level: '+d.properties['STED']);
                
               borderPath.attr('opacity', 1);
