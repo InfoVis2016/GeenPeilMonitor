@@ -83,6 +83,15 @@ angular.module('infovisApp')
           .attr('x', 500)
           .attr('y', 250)
           .attr('class', 'info-subtitle');
+           var info_subtitleattendence = info.append('text')
+          .attr('x', 500)
+          .attr('y', 300)
+          .attr('class', 'info-subtitle');
+          var info_subtitlepotential = info.append('text')
+          .attr('x', 500)
+          .attr('y', 325)
+          .attr('class', 'info-subtitle');
+          
     var info_subtitleagainst = info.append('text')
           .attr('x', 650)
           .attr('y', 75)
@@ -109,7 +118,27 @@ angular.module('infovisApp')
           .attr('class', 'info-subtitle');
           var info_subtitleagainst6 = info.append('text')
           .attr('x', 650)
-          .attr('y', 225)
+          .attr('y', 250)
+          .attr('class', 'info-subtitle');
+           var info_demograpics= info.append('text')
+          .attr('x', 500)
+          .attr('y', 375)
+          .attr('class', 'info-subtitle');
+          var info_demograpics1= info.append('text')
+          .attr('x', 500)
+          .attr('y', 400)
+          .attr('class', 'info-subtitle');
+          var info_demograpics2= info.append('text')
+          .attr('x', 500)
+          .attr('y', 425)
+          .attr('class', 'info-subtitle');
+          var info_demograpics3= info.append('text')
+          .attr('x', 500)
+          .attr('y', 450)
+          .attr('class', 'info-subtitle');
+          var info_demograpics4= info.append('text')
+          .attr('x', 500)
+          .attr('y', 475)
           .attr('class', 'info-subtitle');
 
         d3.json('map.json', function(error, data) {
@@ -141,6 +170,8 @@ angular.module('infovisApp')
               info_subtitle6.text('VVD: ' + d.properties['VVD']);
               var totalyes = d.properties['50PLUS']+d.properties['Democraten 66 (D66)']+d.properties['GROENLINKS']+d.properties['Partij van de Arbeid (P.v.d.A.)']+d.properties['VVD'];
               info_subtitle7.text('Total: ' + totalyes);
+              info_subtitleattendence.text('Attendence: ' + d.properties['Opkomstpercentage'])
+              info_subtitlepotential.text('Potential voters: ' + d.properties['# kiesgerechtigden']);
               info_subtitleagainst.text('No Camp:');
               info_subtitleagainst1.text('ChristenUnie: ' + d.properties['ChristenUnie']);
               info_subtitleagainst2.text('PVV: ' + d.properties['PVV (Partij voor de Vrijheid)']);
@@ -149,13 +180,19 @@ angular.module('infovisApp')
               info_subtitleagainst5.text('SGP: ' + d.properties['Staatkundig Gereformeerde Partij (SGP)']);
               var totalno = d.properties['ChristenUnie']+d.properties['PVV (Partij voor de Vrijheid)']+d.properties['Partij voor de Dieren']+d.properties['Staatkundig Gereformeerde Partij (SGP)'];
               info_subtitleagainst6.text('Total: ' + totalno);
-
+              var alloch = d.properties['P_WEST_AL']+d.properties['P_N_W_AL'];
+              info_demograpics.text('Population: '+ d.properties['AANT_INW']);
+              info_demograpics1.text('Male: '+ d.properties['AANT_MAN']);
+              info_demograpics2.text('Female: '+ d.properties['AANT_VROUW']);
+              info_demograpics3.text('Percentage ethnic minorities: '+ alloch + '%');
+              info_demograpics4.text('Urbanity level: '+d.properties['STED']);
               info.attr('opacity', 1);
             })
             .on('mouseout', function(d) {
               if ( d.properties.WATER === 'JA' ) { return; }
               info.attr('opacity', 0);
               d3.select(this).style('fill', d.properties.in_favor ? '#5FFF60' : '#E53F31');
+              info_title.text();
             })
             .attr('stroke', function (d) {
               if ( d.properties.WATER === 'JA' ) {
