@@ -33,6 +33,7 @@ angular.module('infovisApp')
         var xAxis = d3.svg.axis()
           .scale(x)
           .orient('bottom')
+
           .ticks(10);
           
 

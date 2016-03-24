@@ -93,10 +93,24 @@
         </div>
       </div>
 
+      <div sm-scene="slide-aggregated" duration="100%" offset="15000" trigger-hook="0.25"></div>
+      <div class="slide slide-aggregated" sm-tween="slide-aggregated" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-aggregated" classes="show">
+        <div class="slide-content">
+          <h1>aggregated tweets slide</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-aggregated-text" duration="100%" offset="16000" trigger-hook="0.25"></div>
+      <div class="slide slide-aggregated-text" sm-tween="slide-aggregated-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-aggregated-text" classes="show">
+        <div class="slide-content">
+          <h1>event bar chart</h1>
+        </div>
+      </div>
+
       <div sm-scene="slide-cloud-text" duration="100%" offset="11000" trigger-hook="0.25"></div>
       <div class="slide slide-cloud-text" sm-tween="slide-cloud-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-cloud-text" classes="show">
         <div class="slide-content">
-          <h1>text word cloud</h1>
+          <h1>What do users say?</h1>
         </div>
       </div>
 
@@ -145,20 +159,6 @@
             <img ng-mouseenter="selectedTweet = 'sp'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/sp.png" />
             <img ng-mouseenter="selectedTweet = 'sgp'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/sgp.png" />
           </div>
-        </div>
-      </div>
-
-      <div sm-scene="slide-aggregated" duration="100%" offset="15000" trigger-hook="0.25"></div>
-      <div class="slide slide-aggregated" sm-tween="slide-aggregated" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-aggregated" classes="show">
-        <div class="slide-content">
-          <h1>aggregated tweets slide</h1>
-        </div>
-      </div>
-
-      <div sm-scene="slide-aggregated-text" duration="100%" offset="16000" trigger-hook="0.25"></div>
-      <div class="slide slide-aggregated-text" sm-tween="slide-aggregated-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-aggregated-text" classes="show">
-        <div class="slide-content">
-          <h1>text about aggregated tweets</h1>
         </div>
       </div>
 

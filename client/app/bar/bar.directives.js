@@ -156,7 +156,7 @@ angular.module('infovisApp')
                 var year = d.date.getFullYear();
                 info_title.text(day + ' ' + month + ' ' + year);
                 info_subtitle.text('Tweet count: ' + d.total);
-                info_subsubtitle.text('User ' + )
+                
                 info.attr('opacity', 1);
               })
               .on('mouseout', function() {
