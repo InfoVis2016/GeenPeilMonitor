@@ -92,17 +92,12 @@ angular.module('infovisApp')
           .attr('x', 150)
           .attr('y', 45)
           .attr('class', 'info-subtitle');
-        var info_subsubtitle = info.append('text')
-          .attr('x', 150)
-          .attr('y', 65)
-          .attr('class', 'info-subtitle');
 
         // Get data from server
         d3.json('aggregatedData.json', function(error, data) {
           if (error) { throw error; }
           scope.parseData(data);
         });
-
 
         scope.parseData = function(data) {
           var _data = [];
