@@ -11,7 +11,7 @@ angular.module('infovisApp')
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="bar-chart"></div>',
+      template: '<div class="urlBar-chart"></div>',
       link: function (scope, element) {
 
         var margin = {
@@ -64,7 +64,6 @@ angular.module('infovisApp')
         var info_subtitle = info.append('text')
           .attr('x', 50)
           .attr('y', 45)
-          .text('asdfasdf')
           .attr('class', 'info-subtitle');
 
         // Get data from server
@@ -90,7 +89,6 @@ angular.module('infovisApp')
           // data ranges for the x and y axes
           y.domain([0, d3.max(data, function(d) { return d.count; })]);
 
-
           xAxis.tickFormat(function(d){return (d.rank);});
           // draw the axes now that they are fully set up
           
@@ -102,8 +100,6 @@ angular.module('infovisApp')
             .attr('class', 'x axis')
             .attr('transform', 'translate(0,' + height + ')')
             .call(xAxis);
-            
-
 
           // draw the bars
           main.append('g')
