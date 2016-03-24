@@ -131,7 +131,7 @@ angular.module('infovisApp')
               .attr('height', function(d) { return height - y(d.count); })
               .on('mouseover', function(d) {
                 info_title.text(d.relevantSentence);
-                info_subtitle.text('Tweet count: ' + d.count);
+                info_subtitle.text('Tweet count: ' + d.count + (" (click to visit page)"));
                 info.attr('opacity', 1);
               })
               .on('mouseout', function() {
