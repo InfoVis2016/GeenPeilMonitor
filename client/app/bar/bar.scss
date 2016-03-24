@@ -19,7 +19,7 @@
   }
 
   .bar:hover {
-    fill: #ff4500;
+    fill: #ffcc00;
   }
 
   .axis {
@@ -28,20 +28,20 @@
   .axis path,
   .axis line {
     fill: none;
-    stroke: #333;
+    stroke: #ffcc00;
     stroke-width: 2;
     shape-rendering: crispEdges;
   }
   .axis text {
-    fill: #333;
-    stroke: #333;
+    fill: #ffcc00;
+    stroke: #ffcc00;
     stroke-width: 0.5;
     shape-rendering: crispEdges;
   }
   .brush .extent {
-    fill: #ff4500;
+    fill: #ffcc00;
     fill-opacity: .125;
-    stroke: #ff4500;
+    stroke: #ffcc00;
     stroke-width: 2;
     shape-rendering: crispEdges;
   }
@@ -52,12 +52,12 @@
 
     .info-title,
     .info-subtitle {
-      fill: #333;
+      fill: #ffcc00;
       shape-rendering: crispEdges;
     }
     .info-title {
       font-size: 20px;
-      stroke: #333;
+      stroke: #ffcc00;
     }
     .info-subtitle {
       font-size: 14px;

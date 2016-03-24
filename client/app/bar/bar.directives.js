@@ -85,20 +85,24 @@ angular.module('infovisApp')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
-          .attr('x', 750)
+          .attr('x', 150)
           .attr('y', 20)
           .attr('class', 'info-title');
         var info_subtitle = info.append('text')
-          .attr('x', 750)
+          .attr('x', 150)
           .attr('y', 45)
-          .text('asdfasdf')
+          .attr('class', 'info-subtitle');
+        var info_subsubtitle = info.append('text')
+          .attr('x', 150)
+          .attr('y', 65)
           .attr('class', 'info-subtitle');
 
         // Get data from server
-        d3.json('tweets.json', function(error, data) {
+        d3.json('aggregatedData.json', function(error, data) {
           if (error) { throw error; }
           scope.parseData(data);
         });
+
 
         scope.parseData = function(data) {
           var _data = [];
@@ -108,8 +112,7 @@ angular.module('infovisApp')
             _data.push({
               date: parseDate(date),
               total: data[date].count,
-              words: data[date].word_counts,
-              users: data[date].user_counts
+              words: data[date].word_counts
             });
           }
           scope.render(_data);
@@ -153,6 +156,7 @@ angular.module('infovisApp')
                 var year = d.date.getFullYear();
                 info_title.text(day + ' ' + month + ' ' + year);
                 info_subtitle.text('Tweet count: ' + d.total);
+                info_subsubtitle.text('User ' + )
                 info.attr('opacity', 1);
               })
               .on('mouseout', function() {
