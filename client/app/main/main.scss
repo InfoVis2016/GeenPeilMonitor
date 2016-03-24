@@ -118,8 +118,16 @@
 
   .slide6 .slide-content {
     position: absolute;
-    top: 200px;
+    top: 225px;
     left: 600px;
+    right: 0;
+    bottom: 0;
+  }
+
+  .slide8 .slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
   }
