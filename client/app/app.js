@@ -10,11 +10,9 @@ angular.module('infovisApp', [
   'ngMaterial',
   'hj.scrollMagic',
 ])
-  .config(function($urlRouterProvider, $locationProvider, scrollMagicProvider) {
+  .config(function($urlRouterProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
-
-    scrollMagicProvider.addIndicators = true;
   });
