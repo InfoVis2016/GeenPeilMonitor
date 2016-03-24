@@ -31,7 +31,7 @@ angular.module('infovisApp')
         var heightOverview = 500 - marginOverview.top - marginOverview.bottom;
 
         // mathematical scales for the x and y axes
-        var x = d3.scale.linear().range([0, width]);
+        var x = d3.scale.category10();
         var y = d3.scale.linear().range([height, 0]);
         var xOverview = d3.scale.linear().range([0, width]);
         var yOverview = d3.scale.linear().range([heightOverview, 0]);
@@ -70,11 +70,11 @@ angular.module('infovisApp')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
-          .attr('x', 750)
+          .attr('x', 50)
           .attr('y', 20)
           .attr('class', 'info-title');
         var info_subtitle = info.append('text')
-          .attr('x', 750)
+          .attr('x', 50)
           .attr('y', 45)
           .text('asdfasdf')
           .attr('class', 'info-subtitle');
@@ -87,16 +87,19 @@ angular.module('infovisApp')
 
         scope.parseData = function(data) {
           var _data = [];
+          for ( var i in data ) {
             _data.push({
-              url: data.url,
-              count: data.count
+              url: data[i].url,
+              count: data[i].count,
+              relevantSentence: data[i].relevantSentence
             });
+          }
           scope.render(_data);
         };
 
         scope.render = function(data) {
           // data ranges for the x and y axes
-          x.domain(d3.extent(data, function(d) { return d.url; }));
+          x.domain(0,d3.extent(data, function(d){ return d.url;}));
           y.domain([0, d3.max(data, function(d) { return d.count; })]);
           xOverview.domain(x.domain());
           yOverview.domain(y.domain());
@@ -127,12 +130,15 @@ angular.module('infovisApp')
               .attr('y', function(d) { return y(d.count)-1; })
               .attr('height', function(d) { return height - y(d.count); })
               .on('mouseover', function(d) {
-                //info_subtitle.text(d.relevantSentence);
+                info_title.text(d.relevantSentence);
                 info_subtitle.text('Tweet count: ' + d.count);
                 info.attr('opacity', 1);
               })
               .on('mouseout', function() {
                 info.attr('opacity', 0);
+              })
+              .on('click', function(d){
+                window.open(d.url, '_blank');
               });
 
           overview.append('g')
@@ -162,7 +168,7 @@ angular.module('infovisApp')
         // zooming/panning behaviour for overview chart
         function brushed() {
           // update the main chart's x axis data range
-          x.domain(brush.empty() ? xOverview.domain() : brush.extent());
+          // x.domain(brush.empty() ? xOverview.domain() : brush.extent());
 
           // redraw the bars on the main chart
           main.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.url)+1 + ',0)'; });
