@@ -272,11 +272,16 @@
   .slide-summary .slide-content {
     padding-left: 100px;
     position: absolute;
-    top: 300px;
+    top: 225px;
     left: 500px;
     right: 450px;
     bottom: 0;
     text-align: center;
+    h2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 
   .slide-final .slide-content {
