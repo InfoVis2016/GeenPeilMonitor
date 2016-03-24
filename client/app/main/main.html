@@ -27,73 +27,88 @@
         <img ng-src="assets/images/speaker.png" sm-tween="show-speaker" duration="1" from-vars="{bottom: '50px'}" to-vars="{bottom: '180px'}" />
       </div>
 
-      <div sm-scene="slide1" duration="100%" offset="2200" trigger-hook="0.25"></div>
-      <div class="slide slide1" sm-tween="slide1" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide1" classes="show">
+      <div sm-scene="slide-intro" duration="100%" offset="2200" trigger-hook="0.25"></div>
+      <div class="slide slide-intro" sm-tween="slide-intro" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-intro" classes="show">
         <div class="slide-content">
           <img ng-src="assets/images/geenpeil_glow.png" />
           <h1>So what is it about?!</h1>
         </div>
       </div>
 
-      <div sm-scene="slide2" duration="100%" offset="3000" trigger-hook="0.25"></div>
-      <div class="slide slide2" sm-tween="slide2" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide2" classes="show">
+      <div sm-scene="slide-about" duration="100%" offset="3000" trigger-hook="0.25"></div>
+      <div class="slide slide-about" sm-tween="slide-about" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-about" classes="show">
+        <div class="slide-content">
+          <h2>GeenPeil is an initiative to hold a referendum in The Netherlands about the European Union Association Agreement with Ukraine on the 6th of April.</h2>
+          <h2>The agreement could result in more cooperation on military and economical aspects.</h2>
+        </div>
+      </div>
+
+      <div sm-scene="slide-europe" duration="100%" offset="4000" trigger-hook="0.25"></div>
+      <div class="slide slide-europe" sm-tween="slide-europe" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-europe" classes="show">
         <div class="slide-content">
           <h1>Europe</h1>
           <img ng-src="assets/images/europe.png" />
         </div>
       </div>
 
-      <div sm-scene="slide3" duration="100%" offset="4000" trigger-hook="0.25"></div>
-      <div class="slide slide3" sm-tween="slide3" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide3" classes="show">
+      <div sm-scene="slide-offices" duration="100%" offset="5000" trigger-hook="0.25"></div>
+      <div class="slide slide-offices" sm-tween="slide-offices" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-offices" classes="show">
         <div class="slide-content">
           <voting-offices></voting-offices>
         </div>
       </div>
 
-      <div sm-scene="slide4" duration="100%" offset="5000" trigger-hook="0.25"></div>
-      <div class="slide slide4" sm-tween="slide4" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide4" classes="show">
+      <div sm-scene="slide-offices-text" duration="100%" offset="6000" trigger-hook="0.25"></div>
+      <div class="slide slide-offices-text" sm-tween="slide-offices-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-offices-text" classes="show">
         <div class="slide-content">
-          <h1>text slide 4</h1>
+          <h1>text voting offices</h1>
         </div>
       </div>
 
-      <div sm-scene="slide5" duration="100%" offset="6000" trigger-hook="0.25"></div>
-      <div class="slide slide5" sm-tween="slide5" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide5" classes="show">
-        <div class="slide-content">
-          <h1>text slide 5</h1>
-        </div>
-      </div>
-
-      <div sm-scene="slide6" duration="100%" offset="7000" trigger-hook="0.25"></div>
-      <div class="slide slide6" sm-tween="slide6" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide6" classes="show">
+      <div sm-scene="slide-map" duration="100%" offset="7000" trigger-hook="0.25"></div>
+      <div class="slide slide-map" sm-tween="slide-map" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-map" classes="show">
         <div class="slide-content">
           <map-chart></map-chart>
         </div>
       </div>
 
-      <div sm-scene="slide7" duration="100%" offset="8000" trigger-hook="0.25"></div>
-      <div class="slide slide7" sm-tween="slide7" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide7" classes="show">
+      <div sm-scene="slide-map-text" duration="100%" offset="8000" trigger-hook="0.25"></div>
+      <div class="slide slide-map-text" sm-tween="slide-map-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-map-text" classes="show">
         <div class="slide-content">
-          <h1>text slide 7</h1>
+          <h1>text map</h1>
         </div>
       </div>
 
-      <div sm-scene="slide8" duration="100%" offset="9000" trigger-hook="0.25"></div>
-      <div class="slide slide8" sm-tween="slide8" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide8" classes="show">
-        <div class="slide-content">
-          <word-cloud></word-cloud>
-        </div>
-      </div>
-
-      <div sm-scene="slide9" duration="100%" offset="10000" trigger-hook="0.25"></div>
-      <div class="slide slide9" sm-tween="slide9" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide9" classes="show">
+      <div sm-scene="slide-tweets" duration="100%" offset="9000" trigger-hook="0.25"></div>
+      <div class="slide slide-tweets" sm-tween="slide-tweets" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-tweets" classes="show">
         <div class="slide-content">
           <h1>text slide 9</h1>
         </div>
       </div>
 
-      <div sm-scene="slide10" duration="100%" offset="11000" trigger-hook="0.25"></div>
-      <div class="slide slide10" sm-tween="slide10" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide10" classes="show">
+      <div sm-scene="slide-cloud" duration="100%" offset="10000" trigger-hook="0.25"></div>
+      <div class="slide slide-cloud" sm-tween="slide-cloud" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-cloud" classes="show">
+        <div class="slide-content">
+          <word-cloud></word-cloud>
+        </div>
+      </div>
+
+      <div sm-scene="slide-cloud-text" duration="100%" offset="11000" trigger-hook="0.25"></div>
+      <div class="slide slide-cloud-text" sm-tween="slide-cloud-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-cloud-text" classes="show">
+        <div class="slide-content">
+          <h1>text word cloud</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-parties-text" duration="100%" offset="12000" trigger-hook="0.25"></div>
+      <div class="slide slide-parties-text" sm-tween="slide-parties-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-parties-text" classes="show">
+        <div class="slide-content">
+          <h1>text slide 10</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-parties" duration="100%" offset="13000" trigger-hook="0.25"></div>
+      <div class="slide slide-parties" sm-tween="slide-parties" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-parties" classes="show">
         <div class="slide-content">
           <h1>text slide 10</h1>
         </div>
