@@ -39,7 +39,7 @@
       <div class="slide slide-about" sm-tween="slide-about" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-about" classes="show">
         <div class="slide-content">
           <h2>GeenPeil is an initiative to hold a referendum in The Netherlands about the European Union Association Agreement with Ukraine on the 6th of April.</h2>
-          <h2>The agreement could result in more cooperation on military and economical aspects.</h2>
+          <h3>The agreement could result in more cooperation on military and economical aspects.</h3>
         </div>
       </div>
 
@@ -79,17 +79,17 @@
         </div>
       </div>
 
-      <div sm-scene="slide-tweets" duration="100%" offset="9000" trigger-hook="0.25"></div>
-      <div class="slide slide-tweets" sm-tween="slide-tweets" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-tweets" classes="show">
+      <div sm-scene="slide-tweets-text" duration="100%" offset="9000" trigger-hook="0.25"></div>
+      <div class="slide slide-tweets-text" sm-tween="slide-tweets-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-tweets-text" classes="show">
         <div class="slide-content">
-          <h1>text slide 9</h1>
+          <h1>text tweets</h1>
         </div>
       </div>
 
-      <div sm-scene="slide-cloud" duration="100%" offset="10000" trigger-hook="0.25"></div>
-      <div class="slide slide-cloud" sm-tween="slide-cloud" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-cloud" classes="show">
+      <div sm-scene="slide-tweets" duration="100%" offset="10000" trigger-hook="0.25"></div>
+      <div class="slide slide-tweets" sm-tween="slide-tweets" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-tweets" classes="show">
         <div class="slide-content">
-          <word-cloud></word-cloud>
+          <h1>ambiguous tweets</h1>
         </div>
       </div>
 
@@ -100,17 +100,24 @@
         </div>
       </div>
 
-      <div sm-scene="slide-parties-text" duration="100%" offset="12000" trigger-hook="0.25"></div>
-      <div class="slide slide-parties-text" sm-tween="slide-parties-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-parties-text" classes="show">
+      <div sm-scene="slide-cloud" duration="100%" offset="12000" trigger-hook="0.25"></div>
+      <div class="slide slide-cloud" sm-tween="slide-cloud" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-cloud" classes="show">
         <div class="slide-content">
-          <h1>text slide 10</h1>
+          <word-cloud></word-cloud>
         </div>
       </div>
 
-      <div sm-scene="slide-parties" duration="100%" offset="13000" trigger-hook="0.25"></div>
+      <div sm-scene="slide-parties-text" duration="100%" offset="13000" trigger-hook="0.25"></div>
+      <div class="slide slide-parties-text" sm-tween="slide-parties-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-parties-text" classes="show">
+        <div class="slide-content">
+          <h1>text parties</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-parties" duration="100%" offset="14000" trigger-hook="0.25"></div>
       <div class="slide slide-parties" sm-tween="slide-parties" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-parties" classes="show">
         <div class="slide-content">
-          <h1>text slide 10</h1>
+          <h1>party stances</h1>
         </div>
       </div>
 
