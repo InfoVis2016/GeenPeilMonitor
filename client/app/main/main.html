@@ -117,7 +117,34 @@
       <div sm-scene="slide-parties" duration="100%" offset="14000" trigger-hook="0.25"></div>
       <div class="slide slide-parties" sm-tween="slide-parties" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-parties" classes="show">
         <div class="slide-content">
-          <h1>party stances</h1>
+          <div class="party-tweet">
+            <img ng-class="{'show': selectedTweet == '50plus'}" ng-src="assets/images/parties/50plusTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'cda'}" ng-src="assets/images/parties/cdaTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'cu'}" ng-src="assets/images/parties/cuTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'd66'}" ng-src="assets/images/parties/d66Tweet.png" />
+            <img ng-class="{'show': selectedTweet == 'gl'}" ng-src="assets/images/parties/glTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'pvda'}" ng-src="assets/images/parties/pvdaTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'pvdd'}" ng-src="assets/images/parties/pvddTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'pvv'}" ng-src="assets/images/parties/pvvTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'sgp'}" ng-src="assets/images/parties/sgpTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'sp'}" ng-src="assets/images/parties/spTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'vvd'}" ng-src="assets/images/parties/vvdTweet.png" />
+          </div>
+          <div class="in-favor">
+            <img ng-mouseenter="selectedTweet = '50plus'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/50plus.png" />
+            <img ng-mouseenter="selectedTweet = 'cda'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/cda.png" />
+            <img ng-mouseenter="selectedTweet = 'd66'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/d66.png" />
+            <img ng-mouseenter="selectedTweet = 'gl'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/gl.png" />
+            <img ng-mouseenter="selectedTweet = 'pvda'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/pvda.png" />
+            <img ng-mouseenter="selectedTweet = 'vvd'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/vvd.png" />
+          </div>
+          <div class="not-in-favor">
+            <img ng-mouseenter="selectedTweet = 'cu'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/cu.png" />
+            <img ng-mouseenter="selectedTweet = 'pvv'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/pvv.png" />
+            <img ng-mouseenter="selectedTweet = 'pvdd'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/pvdd.png" />
+            <img ng-mouseenter="selectedTweet = 'sp'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/sp.png" />
+            <img ng-mouseenter="selectedTweet = 'sgp'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/sgp.png" />
+          </div>
         </div>
       </div>
 

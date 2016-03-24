@@ -143,4 +143,57 @@
     right: 0;
     bottom: 0;
   }
+
+  .slide-parties .slide-content {
+    position: absolute;
+    top: 200px;
+    left: 600px;
+    right: 0;
+    bottom: 0;
+    .in-favor {
+      float: left;
+      width: 400px;
+      height: 670px;
+      display: inline-block;
+      background: rgba(95, 255, 96, 0.75);
+      img {
+        margin: 10px auto;
+      }
+    }
+    .not-in-favor {
+      width: 400px;
+      height: 670px;
+      display: inline-block;
+      background: rgba(229, 63, 49, 0.75);
+      img {
+        margin: 15px auto;
+      }
+    }
+    img {
+      cursor: pointer;
+      display: block;
+      height: 100px;
+      width: auto;
+    }
+    .party-tweet {
+      position: absolute;
+      top: 200px;
+      pointer-events: none;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        display: block;
+        box-sizing: border-box;
+        transition: all 0.5s ease-in-out;
+        &.show {
+          opacity: 1;
+          transform: scale(1.5);
+          -webkit-backface-visibility: hidden;
+          -webkit-transform: translateZ(0) scale(1.5, 1.5);
+        }
+      }
+    }
+  }
 }
