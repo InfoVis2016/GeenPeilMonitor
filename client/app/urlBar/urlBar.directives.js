@@ -23,23 +23,31 @@ angular.module('infovisApp')
         var width = 960 - margin.left - margin.right;
         var height = 500 - margin.top - margin.bottom;
 
+        var barWidth = 25;
         // mathematical scales for the x and y axes
-        var x = d3.scale.linear().range([0, width]);
+        var x = d3.scale.linear().range([0, barWidth * 10 + 50]);
         var y = d3.scale.linear().range([height, 0]);
 
+        
         // rendering for the x and y axes
         var xAxis = d3.svg.axis()
           .scale(x)
-          .orient('bottom');
+          .orient('bottom')
+          .ticks(10);
+          
+
         var yAxis = d3.svg.axis()
           .scale(y)
-          .orient('left');
+          .orient('left')
+          .ticks(10);
+          
 
         var svg = d3.select(element[0])
           .append('svg')
           .attr('preserveAspectRatio', 'xMinYMin meet')
           .attr('viewBox', '0 0 960 500')
           .attr('class', 'svg');
+
 
         var main = svg.append('g')
           .attr('class', 'main')
@@ -71,7 +79,8 @@ angular.module('infovisApp')
             _data.push({
               url: data[i].url,
               count: data[i].count,
-              relevantSentence: data[i].relevantSentence
+              relevantSentence: data[i].relevantSentence,
+              rank: data[i].rank
             });
           }
           scope.render(_data);
@@ -81,14 +90,20 @@ angular.module('infovisApp')
           // data ranges for the x and y axes
           y.domain([0, d3.max(data, function(d) { return d.count; })]);
 
+
+          xAxis.tickFormat(function(d){return (d.rank);});
           // draw the axes now that they are fully set up
+          
+          main.append('g')
+            .attr('class', 'y axis')
+            .call(yAxis);
+            
           main.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate(0,' + height + ')')
             .call(xAxis);
-          main.append('g')
-            .attr('class', 'y axis')
-            .call(yAxis);
+            
+
 
           // draw the bars
           main.append('g')
@@ -98,13 +113,14 @@ angular.module('infovisApp')
             .data(data)
             .enter().append('rect')
               .attr('class', 'bar')
-              .attr('width', 25)
-              .attr('x', function(d, i) { return i*(25+5); })
+              .sort(function(a,b){return a.value - b.value;})
+              .attr('width', barWidth)
+              .attr('x', function(d, i) { return 2 + i*(barWidth+5); })
               .attr('y', function(d) { return y(d.count)-1; })
               .attr('height', function(d) { return height - y(d.count); })
               .on('mouseover', function(d) {
                 info_title.text(d.relevantSentence);
-                info_subtitle.text('Tweet count: ' + d.count + (" (click to visit page)"));
+                info_subtitle.text('Tweet count: ' + d.count + (' (click to visit page)'));
                 info.attr('opacity', 1);
               })
               .on('mouseout', function() {
