@@ -11,7 +11,7 @@ angular.module('infovisApp')
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="bar-chart"></div>',
+      template: '<div id="bar" class="bar-chart"></div>',
       link: function (scope, element) {
 
         var monthNames = [
@@ -62,16 +62,16 @@ angular.module('infovisApp')
           .scale(xOverview)
           .orient('bottom');
 
-        var svg = d3.select(element[0])
+        scope.svg = d3.select(element[0])
           .append('svg')
           .attr('preserveAspectRatio', 'xMinYMin meet')
           .attr('viewBox', '0 0 960 500')
           .attr('class', 'svg');
 
-        var mainBar = svg.append('g')
+        scope.mainBar = scope.svg.append('g')
           .attr('class', 'main')
           .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-        var overview = svg.append('g')
+        var overview = scope.svg.append('g')
           .attr('class', 'overview')
           .attr('transform', 'translate(' + marginOverview.left + ',' + marginOverview.top + ')');
 
@@ -81,7 +81,7 @@ angular.module('infovisApp')
           .on('brush', brushed);
 
         // Info container
-        var info = svg.append('g')
+        var info = scope.svg.append('g')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
@@ -121,11 +121,11 @@ angular.module('infovisApp')
           yOverview.domain(y.domain());
 
           // draw the axes now that they are fully set up
-          mainBar.append('g')
+          scope.mainBar.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate(0,' + height + ')')
             .call(xAxis);
-          mainBar.append('g')
+          scope.mainBar.append('g')
             .attr('class', 'y axis')
             .call(yAxis);
           overview.append('g')
@@ -134,7 +134,7 @@ angular.module('infovisApp')
             .call(xAxisOverview);
 
           // draw the bars
-          mainBar.append('g')
+          scope.mainBar.append('g')
             // a group for each stack of bars, positioned in the correct x position
             .selectAll('.bar')
             .data(data)
@@ -150,7 +150,6 @@ angular.module('infovisApp')
                 var year = d.date.getFullYear();
                 info_title.text(day + ' ' + month + ' ' + year);
                 info_subtitle.text('Tweet count: ' + d.total);
-                
                 info.attr('opacity', 1);
               })
               .on('mouseout', function() {
@@ -187,10 +186,10 @@ angular.module('infovisApp')
           x.domain(brush.empty() ? xOverview.domain() : brush.extent());
 
           // redraw the bars on the main chart
-          mainBar.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.date)+1 + ',0)'; });
+          scope.mainBar.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.date)+1 + ',0)'; });
 
           // redraw the x axis of the main chart
-          mainBar.select('.x.axis').call(xAxis);
+          scope.mainBar.select('.x.axis').call(xAxis);
         }
       }
     };

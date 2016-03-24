@@ -11,7 +11,7 @@ angular.module('infovisApp')
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="urls"></div>',
+      template: '<div id-"urls" class="urls"></div>',
       link: function (scope, element) {
 
         var margin = {
@@ -39,18 +39,18 @@ angular.module('infovisApp')
           .orient('left')
           .ticks(10);
           
-        var svgUrls = d3.select(element[0])
+        scope.svgUrls = d3.select(element[0])
           .append('svg')
           .attr('preserveAspectRatio', 'xMinYMin meet')
           .attr('viewBox', '0 0 960 500')
           .attr('class', 'svg');
 
-        var mainUrls = svgUrls.append('g')
+        scope.mainUrls = scope.svgUrls.append('g')
           .attr('class', 'main')
           .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
         // Info container
-        var info = svgUrls.append('g')
+        var info = scope.svgUrls.append('g')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
@@ -88,17 +88,17 @@ angular.module('infovisApp')
           xAxis.tickFormat(function(d){return (d.rank);});
           // draw the axes now that they are fully set up
           
-          mainUrls.append('g')
+          scope.mainUrls.append('g')
             .attr('class', 'y axis')
             .call(yAxis);
             
-          mainUrls.append('g')
+          scope.mainUrls.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate(0,' + height + ')')
             .call(xAxis);
 
           // draw the bars
-          mainUrls.append('g')
+          scope.mainUrls.append('g')
             // a group for each stack of bars, positioned in the correct x position
             .selectAll('.urlBar')
             .data(data)
