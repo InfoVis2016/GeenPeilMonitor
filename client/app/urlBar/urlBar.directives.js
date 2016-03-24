@@ -11,7 +11,7 @@ angular.module('infovisApp')
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="bar-chart"></div>',
+      template: '<div class="urlBar-chart"></div>',
       link: function (scope, element) {
 
         var margin = {
