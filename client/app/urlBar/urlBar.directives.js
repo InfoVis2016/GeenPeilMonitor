@@ -14,21 +14,6 @@ angular.module('infovisApp')
       template: '<div class="bar-chart"></div>',
       link: function (scope, element) {
 
-        var monthNames = [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December'
-        ];
-
         var margin = {
           top: 80,
           right: 20,
