@@ -14,27 +14,28 @@
     left: 0;
   }
 
-  .bar {
+  .urlBar {
     fill: #ddd;
   }
 
-  .bar:hover {
+  .urlBar:hover {
     cursor: pointer;
     fill: #ffcc00;
   }
 
   .axis {
-    font: 10px sans-serif;
+    font: 20px sans-serif;
+    font-weight: bold;
   }
   .axis path,
   .axis line {
     fill: none;
-    stroke: #333;
+    stroke: #ffcc00;
     stroke-width: 2;
     shape-rendering: crispEdges;
   }
   .axis text {
-    fill: #333;
+    fill: #ffcc00;
     stroke: #333;
     stroke-width: 0.5;
     shape-rendering: crispEdges;
