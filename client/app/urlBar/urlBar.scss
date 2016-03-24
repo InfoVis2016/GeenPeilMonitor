@@ -1,0 +1,59 @@
+.urlBar-chart {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
+  @include user-select(none);
+
+  .svg {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  .bar {
+    fill: #ddd;
+  }
+
+  .bar:hover {
+    fill: #ffcc00;
+  }
+
+  .axis {
+    font: 10px sans-serif;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #333;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+  .axis text {
+    fill: #333;
+    stroke: #333;
+    stroke-width: 0.5;
+    shape-rendering: crispEdges;
+  }
+
+  .info {
+    will-change: opacity;
+    transition: opacity 0.5s ease;
+
+    .info-title,
+    .info-subtitle {
+      fill: #ffcc00;
+      shape-rendering: crispEdges;
+    }
+    .info-title {
+      font-size: 20px;
+      stroke: #ffcc00;
+    }
+    .info-subtitle {
+      font-size: 14px;
+    }
+  }
+}
