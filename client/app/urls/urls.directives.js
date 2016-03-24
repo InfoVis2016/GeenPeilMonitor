@@ -45,7 +45,7 @@ angular.module('infovisApp')
           .attr('viewBox', '0 0 960 500')
           .attr('class', 'svg');
 
-        var main = svgUrls.append('g')
+        var mainUrls = svgUrls.append('g')
           .attr('class', 'main')
           .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
@@ -88,22 +88,22 @@ angular.module('infovisApp')
           xAxis.tickFormat(function(d){return (d.rank);});
           // draw the axes now that they are fully set up
           
-          main.append('g')
+          mainUrls.append('g')
             .attr('class', 'y axis')
             .call(yAxis);
             
-          main.append('g')
+          mainUrls.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate(0,' + height + ')')
             .call(xAxis);
 
           // draw the bars
-          main.append('g')
+          mainUrls.append('g')
             // a group for each stack of bars, positioned in the correct x position
-            .selectAll('.bar')
+            .selectAll('.urlBar')
             .data(data)
             .enter().append('rect')
-              .attr('class', 'bar')
+              .attr('class', 'urlBar')
               .sort(function(a,b){return a.value - b.value;})
               .attr('width', barWidth)
               .attr('x', function(d, i) { return 2 + i*(barWidth+5); })

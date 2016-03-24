@@ -14,12 +14,12 @@
     left: 0;
   }
 
-  .urls {
+  .urlBar {
+    cursor: pointer;
     fill: #ddd;
   }
 
-  .urls:hover {
-    cursor: pointer;
+  .urlBar:hover {
     fill: #ffcc00;
   }
 

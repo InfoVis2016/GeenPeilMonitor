@@ -68,7 +68,7 @@ angular.module('infovisApp')
           .attr('viewBox', '0 0 960 500')
           .attr('class', 'svg');
 
-        var main = svg.append('g')
+        var mainBar = svg.append('g')
           .attr('class', 'main')
           .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
         var overview = svg.append('g')
@@ -121,11 +121,11 @@ angular.module('infovisApp')
           yOverview.domain(y.domain());
 
           // draw the axes now that they are fully set up
-          main.append('g')
+          mainBar.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate(0,' + height + ')')
             .call(xAxis);
-          main.append('g')
+          mainBar.append('g')
             .attr('class', 'y axis')
             .call(yAxis);
           overview.append('g')
@@ -134,7 +134,7 @@ angular.module('infovisApp')
             .call(xAxisOverview);
 
           // draw the bars
-          main.append('g')
+          mainBar.append('g')
             // a group for each stack of bars, positioned in the correct x position
             .selectAll('.bar')
             .data(data)
@@ -187,10 +187,10 @@ angular.module('infovisApp')
           x.domain(brush.empty() ? xOverview.domain() : brush.extent());
 
           // redraw the bars on the main chart
-          main.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.date)+1 + ',0)'; });
+          mainBar.selectAll('.bar').attr('transform', function(d) { return 'translate(' + x(d.date)+1 + ',0)'; });
 
           // redraw the x axis of the main chart
-          main.select('.x.axis').call(xAxis);
+          mainBar.select('.x.axis').call(xAxis);
         }
       }
     };
