@@ -7,11 +7,11 @@
  */
 angular.module('infovisApp')
 
-  .directive('urlBarChart', function() {
+  .directive('urlsChart', function() {
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="urlBar-chart"></div>',
+      template: '<div class="urls"></div>',
       link: function (scope, element) {
 
         var margin = {

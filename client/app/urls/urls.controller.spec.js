@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: UrlBarController', function() {
+describe('Controller: UrlsController', function() {
 
   // load the controller's module
   beforeEach(module('infovisApp'));
@@ -8,7 +8,7 @@ describe('Controller: UrlBarController', function() {
   beforeEach(module('socketMock'));
 
   var scope;
-  var UrlBarController;
+  var UrlsController;
   var state;
   var $httpBackend;
 
@@ -20,13 +20,13 @@ describe('Controller: UrlBarController', function() {
 
     scope = $rootScope.$new();
     state = $state;
-    UrlBarController = $controller('UrlBarController', {
+    UrlsController = $controller('UrlsController', {
       $scope: scope
     });
   }));
 
   it('should attach a list of things to the controller', function() {
     $httpBackend.flush();
-    expect(UrlBarController.awesomeThings.length).toBe(4);
+    expect(UrlsController.awesomeThings.length).toBe(4);
   });
 });

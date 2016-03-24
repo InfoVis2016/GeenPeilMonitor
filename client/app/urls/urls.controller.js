@@ -2,7 +2,7 @@
 
 (function() {
 
-class UrlBarController {
+class UrlsController {
 
   constructor() {
   }
@@ -10,6 +10,6 @@ class UrlBarController {
 }
 
 angular.module('infovisApp')
-  .controller('UrlBarController', UrlBarController);
+  .controller('UrlsController', UrlsController);
 
 })();

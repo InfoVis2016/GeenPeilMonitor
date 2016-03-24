@@ -1,4 +1,4 @@
-.urlBar-chart {
+.urls {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -14,11 +14,11 @@
     left: 0;
   }
 
-  .urlBar {
+  .urls {
     fill: #ddd;
   }
 
-  .urlBar:hover {
+  .urls:hover {
     cursor: pointer;
     fill: #ffcc00;
   }
