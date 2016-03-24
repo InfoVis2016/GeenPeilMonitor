@@ -85,18 +85,16 @@ angular.module('infovisApp')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
-          .attr('x', 750)
+          .attr('x', 150)
           .attr('y', 20)
           .attr('class', 'info-title');
         var info_subtitle = info.append('text')
-          .attr('x', 750)
+          .attr('x', 150)
           .attr('y', 45)
-          .text('asdfasdf')
           .attr('class', 'info-subtitle');
         var info_subsubtitle = info.append('text')
-          .attr('x', 750)
+          .attr('x', 150)
           .attr('y', 65)
-          .text('asdfasdf')
           .attr('class', 'info-subtitle');
 
         // Get data from server
