@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('infovisApp')
+angular.module('infovisApp.bar')
   .config(function($stateProvider) {
     $stateProvider
       .state('bar', {

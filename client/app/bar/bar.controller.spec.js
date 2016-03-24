@@ -3,7 +3,7 @@
 describe('Controller: BarController', function() {
 
   // load the controller's module
-  beforeEach(module('infovisApp'));
+  beforeEach(module('infovisApp.bar'));
   beforeEach(module('stateMock'));
   beforeEach(module('socketMock'));
 

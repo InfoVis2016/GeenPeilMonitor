@@ -5,7 +5,7 @@
 /**
  * Infovis directives
  */
-angular.module('infovisApp')
+angular.module('infovisApp.bar')
 
   .directive('barChart', function() {
     return {

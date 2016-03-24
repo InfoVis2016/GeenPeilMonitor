@@ -9,6 +9,7 @@ angular.module('infovisApp', [
   'ui.router',
   'ngMaterial',
   'hj.scrollMagic',
+  'infovisApp.bar',
 ])
   .config(function($urlRouterProvider, $locationProvider, scrollMagicProvider) {
 
@@ -18,3 +19,5 @@ angular.module('infovisApp', [
 
     scrollMagicProvider.addIndicators = true;
   });
+
+angular.module('infovisApp.bar', []);

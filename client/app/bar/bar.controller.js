@@ -9,7 +9,7 @@ class BarController {
 
 }
 
-angular.module('infovisApp')
+angular.module('infovisApp.bar')
   .controller('BarController', BarController);
 
 })();
