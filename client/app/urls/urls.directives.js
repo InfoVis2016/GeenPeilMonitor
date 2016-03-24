@@ -104,7 +104,6 @@ angular.module('infovisApp')
 
           // draw the bars
           main.append('g')
-            .attr('class', 'bars')
             // a group for each stack of bars, positioned in the correct x position
             .selectAll('.bar')
             .data(data)
