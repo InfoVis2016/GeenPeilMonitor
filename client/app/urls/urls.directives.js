@@ -27,35 +27,30 @@ angular.module('infovisApp')
         // mathematical scales for the x and y axes
         var x = d3.scale.linear().range([0, barWidth * 10 + 50]);
         var y = d3.scale.linear().range([height, 0]);
-
         
         // rendering for the x and y axes
         var xAxis = d3.svg.axis()
           .scale(x)
           .orient('bottom')
-
           .ticks(10);
-          
 
         var yAxis = d3.svg.axis()
           .scale(y)
           .orient('left')
           .ticks(10);
           
-
-        var svg = d3.select(element[0])
+        var svgUrls = d3.select(element[0])
           .append('svg')
           .attr('preserveAspectRatio', 'xMinYMin meet')
           .attr('viewBox', '0 0 960 500')
           .attr('class', 'svg');
 
-
-        var main = svg.append('g')
+        var main = svgUrls.append('g')
           .attr('class', 'main')
           .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
         // Info container
-        var info = svg.append('g')
+        var info = svgUrls.append('g')
           .attr('opacity', 0)
           .attr('class', 'info');
         var info_title = info.append('text')
