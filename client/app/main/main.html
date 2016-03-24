@@ -27,60 +27,152 @@
         <img ng-src="assets/images/speaker.png" sm-tween="show-speaker" duration="1" from-vars="{bottom: '50px'}" to-vars="{bottom: '180px'}" />
       </div>
 
-      <div sm-scene="slide1" duration="100%" offset="2200" trigger-hook="0.25"></div>
-      <div class="slide slide1" sm-tween="slide1" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide1" classes="show">
+      <div sm-scene="slide-intro" duration="100%" offset="2200" trigger-hook="0.25"></div>
+      <div class="slide slide-intro" sm-tween="slide-intro" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-intro" classes="show">
         <div class="slide-content">
           <img ng-src="assets/images/geenpeil_glow.png" />
           <h1>So what is it about?!</h1>
         </div>
       </div>
 
-      <div sm-scene="slide2" duration="100%" offset="3000" trigger-hook="0.25"></div>
-      <div class="slide slide2" sm-tween="slide2" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide2" classes="show">
+      <div sm-scene="slide-about" duration="100%" offset="3000" trigger-hook="0.25"></div>
+      <div class="slide slide-about" sm-tween="slide-about" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-about" classes="show">
         <div class="slide-content">
-          <img ng-src="assets/images/map_eu.png" />
+          <h2>GeenPeil is an initiative to hold a referendum in The Netherlands about the European Union Association Agreement with Ukraine on the 6th of April.</h2>
+          <h3>The agreement could result in more cooperation on military and economical aspects.</h3>
         </div>
       </div>
 
-      <div sm-scene="slide3" duration="100%" offset="4000" trigger-hook="0.25"></div>
-      <div class="slide slide3" sm-tween="slide3" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide3" classes="show">
+      <div sm-scene="slide-europe" duration="100%" offset="4000" trigger-hook="0.25"></div>
+      <div class="slide slide-europe" sm-tween="slide-europe" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-europe" classes="show">
+        <div class="slide-content">
+          <h1>Europe</h1>
+          <img ng-src="assets/images/europe.png" />
+        </div>
+      </div>
+
+      <div sm-scene="slide-offices-text" duration="100%" offset="5000" trigger-hook="0.25"></div>
+      <div class="slide slide-offices-text" sm-tween="slide-offices-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-offices-text" classes="show">
+        <div class="slide-content">
+          <h1>text about voting offices</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-offices" duration="100%" offset="6000" trigger-hook="0.25"></div>
+      <div class="slide slide-offices" sm-tween="slide-offices" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-offices" classes="show">
         <div class="slide-content">
           <voting-offices></voting-offices>
         </div>
       </div>
 
-      <div sm-scene="slide4" duration="100%" offset="5000" trigger-hook="0.25"></div>
-      <div class="slide slide4" sm-tween="slide4" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide4" classes="show">
+      <div sm-scene="slide-map-text" duration="100%" offset="7000" trigger-hook="0.25"></div>
+      <div class="slide slide-map-text" sm-tween="slide-map-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-map-text" classes="show">
         <div class="slide-content">
-          <h1>text slide 4</h1>
+          <h1>text about elections map view</h1>
         </div>
       </div>
 
-      <div sm-scene="slide5" duration="100%" offset="6000" trigger-hook="0.25"></div>
-      <div class="slide slide5" sm-tween="slide5" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide5" classes="show">
-        <div class="slide-content">
-          <h1>text slide 5</h1>
-        </div>
-      </div>
-
-      <div sm-scene="slide6" duration="100%" offset="7000" trigger-hook="0.25"></div>
-      <div class="slide slide6" sm-tween="slide6" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide6" classes="show">
+      <div sm-scene="slide-map" duration="100%" offset="8000" trigger-hook="0.25"></div>
+      <div class="slide slide-map" sm-tween="slide-map" duration="1" from-vars="{left: '100%', scale: 1}" to-vars="{left: '0', scale: 2}" sm-class-toggle="slide-map" classes="show">
         <div class="slide-content">
           <map-chart></map-chart>
         </div>
       </div>
 
-      <div sm-scene="slide7" duration="100%" offset="8000" trigger-hook="0.25"></div>
-      <div class="slide slide7" sm-tween="slide7" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide7" classes="show">
+      <div sm-scene="slide-tweets-text" duration="100%" offset="9000" trigger-hook="0.25"></div>
+      <div class="slide slide-tweets-text" sm-tween="slide-tweets-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-tweets-text" classes="show">
         <div class="slide-content">
-          <h1>text slide 7</h1>
+          <h1>text tweets</h1>
         </div>
       </div>
 
-      <div sm-scene="slide8" duration="100%" offset="9000" trigger-hook="0.25"></div>
-      <div class="slide slide8" sm-tween="slide8" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide8" classes="show">
+      <div sm-scene="slide-tweets" duration="100%" offset="10000" trigger-hook="0.25"></div>
+      <div class="slide slide-tweets" sm-tween="slide-tweets" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-tweets" classes="show">
         <div class="slide-content">
-          <h1>text slide 8</h1>
+          <h1>ambiguous tweets</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-cloud-text" duration="100%" offset="11000" trigger-hook="0.25"></div>
+      <div class="slide slide-cloud-text" sm-tween="slide-cloud-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-cloud-text" classes="show">
+        <div class="slide-content">
+          <h1>text word cloud</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-cloud" duration="100%" offset="12000" trigger-hook="0.25"></div>
+      <div class="slide slide-cloud" sm-tween="slide-cloud" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-cloud" classes="show">
+        <div class="slide-content">
+          <word-cloud></word-cloud>
+        </div>
+      </div>
+
+      <div sm-scene="slide-parties-text" duration="100%" offset="13000" trigger-hook="0.25"></div>
+      <div class="slide slide-parties-text" sm-tween="slide-parties-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-parties-text" classes="show">
+        <div class="slide-content">
+          <h1>text parties</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-parties" duration="100%" offset="14000" trigger-hook="0.25"></div>
+      <div class="slide slide-parties" sm-tween="slide-parties" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-parties" classes="show">
+        <div class="slide-content">
+          <div class="party-tweet">
+            <img ng-class="{'show': selectedTweet == '50plus'}" ng-src="assets/images/parties/50plusTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'cda'}" ng-src="assets/images/parties/cdaTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'cu'}" ng-src="assets/images/parties/cuTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'd66'}" ng-src="assets/images/parties/d66Tweet.png" />
+            <img ng-class="{'show': selectedTweet == 'gl'}" ng-src="assets/images/parties/glTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'pvda'}" ng-src="assets/images/parties/pvdaTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'pvdd'}" ng-src="assets/images/parties/pvddTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'pvv'}" ng-src="assets/images/parties/pvvTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'sgp'}" ng-src="assets/images/parties/sgpTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'sp'}" ng-src="assets/images/parties/spTweet.png" />
+            <img ng-class="{'show': selectedTweet == 'vvd'}" ng-src="assets/images/parties/vvdTweet.png" />
+          </div>
+          <div class="in-favor">
+            <img ng-mouseenter="selectedTweet = '50plus'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/50plus.png" />
+            <img ng-mouseenter="selectedTweet = 'cda'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/cda.png" />
+            <img ng-mouseenter="selectedTweet = 'd66'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/d66.png" />
+            <img ng-mouseenter="selectedTweet = 'gl'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/gl.png" />
+            <img ng-mouseenter="selectedTweet = 'pvda'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/pvda.png" />
+            <img ng-mouseenter="selectedTweet = 'vvd'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/vvd.png" />
+          </div>
+          <div class="not-in-favor">
+            <img ng-mouseenter="selectedTweet = 'cu'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/cu.png" />
+            <img ng-mouseenter="selectedTweet = 'pvv'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/pvv.png" />
+            <img ng-mouseenter="selectedTweet = 'pvdd'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/pvdd.png" />
+            <img ng-mouseenter="selectedTweet = 'sp'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/sp.png" />
+            <img ng-mouseenter="selectedTweet = 'sgp'" ng-mouseleave="selectedTweet = ''" ng-src="assets/images/parties/sgp.png" />
+          </div>
+        </div>
+      </div>
+
+      <div sm-scene="slide-aggregated" duration="100%" offset="15000" trigger-hook="0.25"></div>
+      <div class="slide slide-aggregated" sm-tween="slide-aggregated" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-aggregated" classes="show">
+        <div class="slide-content">
+          <h1>aggregated tweets slide</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-aggregated-text" duration="100%" offset="16000" trigger-hook="0.25"></div>
+      <div class="slide slide-aggregated-text" sm-tween="slide-aggregated-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-aggregated-text" classes="show">
+        <div class="slide-content">
+          <h1>text about aggregated tweets</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-links-text" duration="100%" offset="17000" trigger-hook="0.25"></div>
+      <div class="slide slide-links-text" sm-tween="slide-links-text" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-links-text" classes="show">
+        <div class="slide-content">
+          <h1>text about links bar chart</h1>
+        </div>
+      </div>
+
+      <div sm-scene="slide-links" duration="100%" offset="18000" trigger-hook="0.25"></div>
+      <div class="slide slide-links" sm-tween="slide-links" duration="1" from-vars="{left: '100%'}" to-vars="{left: '0'}" sm-class-toggle="slide-links" classes="show">
+        <div class="slide-content">
+          <url-bar-chart></url-bar-chart>
         </div>
       </div>
 
