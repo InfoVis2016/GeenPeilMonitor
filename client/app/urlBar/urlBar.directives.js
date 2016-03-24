@@ -99,7 +99,7 @@ angular.module('infovisApp')
             .enter().append('rect')
               .attr('class', 'bar')
               .attr('width', 25)
-              .attr('x', function(d) { return x(d.url)+1; })
+              .attr('x', function(d, i) { return i*(25+5); })
               .attr('y', function(d) { return y(d.count)-1; })
               .attr('height', function(d) { return height - y(d.count); })
               .on('mouseover', function(d) {
