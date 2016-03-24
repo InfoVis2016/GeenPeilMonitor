@@ -287,8 +287,19 @@
     right: 450px;
     bottom: 0;
     text-align: center;
+    h2 {
+      position: absolute;
+      top: 0;
+      left:0;
+      width: 800px;
+    }
+    h1 {
+      position: absolute;
+      top: 300px;
+      left: 0;
+      width: 800px;
+    }
   }
-
 
   .slide-parties .slide-content {
     position: absolute;
