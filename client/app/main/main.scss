@@ -10,7 +10,7 @@
   }
   .spacer {
     display: block;
-    height: 35000px;
+    height: 22000px;
   }
 
   .landing {
@@ -278,6 +278,17 @@
     bottom: 0;
     text-align: center;
   }
+
+  .slide-final .slide-content {
+    padding-left: 100px;
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    right: 450px;
+    bottom: 0;
+    text-align: center;
+  }
+
 
   .slide-parties .slide-content {
     position: absolute;
